@@ -207,7 +207,7 @@ const UserSchema = mongoose.Schema(
         },
         revision: {
           type: Number,
-          default: 0,
+          default: -1,
         },
       },
     ],

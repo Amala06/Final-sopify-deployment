@@ -337,7 +337,7 @@ function InternList() {
           style={{
             width: "50%rem",
             height: "10%",
-            border: "2px solid red",
+            border: "2px solid black",
             overflow: "scroll",
             height: "100vh",
           }}
@@ -608,7 +608,7 @@ function InternList() {
 
         <div
           style={{
-            border: "2px solid red",
+            border: "2px solid black",
             width: "50%",
             height: "100vh",
             overflow: "scroll",

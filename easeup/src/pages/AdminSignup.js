@@ -9,7 +9,7 @@ import "../styles/signup.css";
 import axios from "axios";
 // import { useHistory } from "react-router-dom";
 import Toast from "react-bootstrap/Toast";
-import img1 from '../Images/adminsignup.jpg'
+import img1 from "../Images/adminsignup.jpg";
 import { useToast } from "@chakra-ui/react";
 // import Navigation from "../components/Navigation";
 
@@ -117,10 +117,10 @@ const AdminSignup = () => {
     <>
       {" "}
       <Navbar />
-      <Container style={{marginTop:"30px"}}>
+      <Container style={{ marginTop: "30px" }}>
         <Row>
-          <Col md={5} className="signup__bg" >
-          <img className="adminLoginimage" src={img1} />
+          <Col md={5} className="signup__bg">
+            <img className="adminLoginimage" src={img1} />
           </Col>
           <Col
             md={7}
@@ -160,7 +160,7 @@ const AdminSignup = () => {
                   value={password}
                 />{" "}
                 <button
-                className="showButton"
+                  className="showButton"
                   style={{
                     height: "27px",
                     background: "#efefef",
@@ -212,7 +212,7 @@ const AdminSignup = () => {
               <div className="py-4">
                 <p className="text-center">
                   Already have an account ?{" "}
-                  <Link to="/login">
+                  <Link to="/adminlogin">
                     <u style={{ color: "blue" }}> Login</u>
                   </Link>
                 </p>

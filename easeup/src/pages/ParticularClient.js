@@ -53,6 +53,7 @@ const ParticularClient = () => {
 
   const handleClosedd = () => setshownotify(false);
   const handleShowedd = () => setshownotify(true);
+
   const fun = () => {
     setConfirm(true);
   };
@@ -139,7 +140,7 @@ const ParticularClient = () => {
         position: "bottom",
       });
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
+      // localStorage.setItem("userInfo", JSON.stringify(data));
 
       console.log(data);
       toast({
@@ -150,7 +151,7 @@ const ParticularClient = () => {
         position: "bottom",
       });
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
+      // localStorage.setItem("userInfo", JSON.stringify(data));
 
       const { firstSub } = await axios.put(
         `/api/user/checkerMainBool/${emails}/${clientEmail}/`
@@ -164,7 +165,7 @@ const ParticularClient = () => {
         position: "bottom",
       });
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
+      // localStorage.setItem("userInfo", JSON.stringify(data));
       // history("/ListenerChat");
     } catch (error) {
       toast({
@@ -191,7 +192,7 @@ const ParticularClient = () => {
       const config = {};
 
       const { data } = await axios.put(
-        `/api/user//sentprojecttoclient/${clientEmail}`,
+        `/api/user/sentprojecttoclient/${clientEmail}`,
 
         formdata,
 
@@ -210,7 +211,7 @@ const ParticularClient = () => {
         position: "bottom",
       });
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
+      // localStorage.setItem("userInfo", JSON.stringify(data));
 
       //  console.log(data);
       //  toast({
@@ -235,7 +236,7 @@ const ParticularClient = () => {
       //    position: "bottom",
       //  });
 
-      //  localStorage.setItem("userInfo", JSON.stringify(data));
+      // localStorage.setItem("userInfo", JSON.stringify(data));
       // history("/ListenerChat");
     } catch (error) {
       toast({
@@ -454,7 +455,6 @@ const ParticularClient = () => {
                 style={{ marginTop: "5px" }}
                 variant="success"
                 // onClick={handleShowedd}
-                disabled
               >
                 <Link to="/clientdetails">AllClients</Link>
               </Button>
@@ -469,6 +469,14 @@ const ParticularClient = () => {
                 disabled
               >
                 Notify the User
+              </Button>
+              <Button
+                style={{ marginTop: "5px" }}
+                variant="success"
+                disabled
+                // onClick={handleShowedd}
+              >
+                <Link to="/clientdetails">AllClients</Link>
               </Button>
             </>
           )}
@@ -741,17 +749,17 @@ const ParticularClient = () => {
                   </span>{" "}
                 </p>
                 <br />
-                <Button variant="outline-danger">
-                  {" "}
-                  <Input
-                    type="file"
-                    name="file"
-                    placeholder="Upload resume"
-                    onChange={handleFileChange}
-                    accept="application/pdf"
-                  ></Input>
-                  {/* <button onClick={handleUpload}>upload</button> */}
-                </Button>
+                {/* <Button variant="outline-danger"> */}
+                {/* {" "} */}
+                <Input
+                  type="file"
+                  name="file"
+                  placeholder="Upload resume"
+                  onChange={handleFileChange}
+                  accept="application/pdf"
+                ></Input>
+                {/* <button onClick={handleUpload}>upload</button> */}
+                {/* </Button> */}
               </div>
               {console.log(clientEmail)}
               {/* <button></button> */}
@@ -787,17 +795,17 @@ const ParticularClient = () => {
                 </p>
                 <br />
 
-                <Button variant="outline-danger">
-                  {" "}
-                  <Input
-                    type="file"
-                    name="project"
-                    placeholder="Upload work"
-                    onChange={handleProjectChange}
-                    accept="application/pdf"
-                  ></Input>
-                  {/* <button onClick={handleUpload}>upload</button> */}
-                </Button>
+                {/* <Button variant="outline-danger"> */}
+                {/* {" "} */}
+                <Input
+                  type="file"
+                  name="project"
+                  placeholder="Upload work"
+                  onChange={handleProjectChange}
+                  accept="application/pdf"
+                ></Input>
+                {/* <button onClick={handleUpload}>upload</button> */}
+                {/* </Button> */}
               </div>
               {console.log(internItem.clientEmail)}
               <Button
@@ -809,7 +817,16 @@ const ParticularClient = () => {
               </Button>
               <br />
               <br />
-              {confirm ? (
+              <Button
+                style={{ width: "21rem" }}
+                onClick={Notifyy}
+                disabled={!confirm}
+              >
+                Send to Client
+              </Button>
+              <br />
+              <br />
+              {/* {confirm ? (
                 <>
                   <Button style={{ width: "21rem" }} onClick={Notifyy}>
                     Send to Client
@@ -822,7 +839,7 @@ const ParticularClient = () => {
                     Send to Client
                   </Button>
                 </>
-              )}
+              )} */}
             </Offcanvas.Body>
           </Offcanvas>
         </div>

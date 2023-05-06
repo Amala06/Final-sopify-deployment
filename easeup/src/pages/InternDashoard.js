@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -9,11 +10,12 @@ import InternNavigation from "./InternNavigation";
 // import { ChatState } from "../../context/ChatProvider";
 import img1 from "../Images/internDashmain.png";
 import "./InternDashboard.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const InternDashoard = () => {
   const userInfoString = localStorage.getItem("userInfo");
   const userInfo = JSON.parse(userInfoString);
+
   return (
     <>
       {" "}
@@ -55,10 +57,10 @@ const InternDashoard = () => {
               We hope this experience will be valuable and rewarding for you,
               and we look forward to working together.
             </p>
-            <button>
-              {" "}
-              <Link to="/particularClient">Get started</Link>
-            </button>
+            <br />
+            <Link to="/particularClient">
+              <Button> Get started</Button>
+            </Link>
           </div>
         </div>
         <div className="internDashboard_subContainer2">

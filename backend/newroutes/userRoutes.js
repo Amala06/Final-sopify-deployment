@@ -1,12 +1,4 @@
-// const express=require('express');
-// const {registerUser,authUser,allUsers}=require("../controllers/userController")
-// const {protect}=require('../middleware/authMiddleware');
-// const router=express.Router();
 
-// router.route('/').post(registerUser).get(protect,allUsers);
-// router.post('/login',authUser);
-
-// module.exports=router;
 
 const express = require("express");
 const { protect } = require("../middleware/authMiddleware");
@@ -66,7 +58,7 @@ const {
 const router = express.Router();
 
 var multer = require("multer");
-const { default: CheckerSignup } = require("../../easeup/src/CheckerSignup");
+// const { default: CheckerSignup } = require("../../easeup/src/CheckerSignup");
 var storage = multer.diskStorage({
   destination: function (req, res, cb) {
     cb(null, "public/files/");

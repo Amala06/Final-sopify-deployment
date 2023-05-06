@@ -170,6 +170,8 @@ import Payment2 from "./InfoPages/Payment1/payment";
 // import PrivateRoute from "./PrivateRoute";
 import PrivateRoute from "./PrivateRoute";
 import AllClientsadmin from "./pages/AllClientsadmin";
+import AdminRoute from "./AdminRoute";
+import InternRoute from "./InternRoute";
 
 // import Register from "./config/Register";
 function App() {
@@ -181,14 +183,19 @@ function App() {
         {/* css done */}
         <Route path="/login" element={<Login />} />
         {/* css done */}
-        <Route path="/chat" element={<Chat />} />
+
+        {/* <Route path="/chat" element={<Chat />} /> */}
         {/* css done */}
+
         <Route path="/signup" element={<Signup />} />
         {/* page not useful */}
+
         <Route path="/listenerregister" element={<RegisterListener />} />
         {/* css done */}
-        <Route path="/ListenerChat" element={<ListenerChat />} />
+
+        {/* <Route path="/ListenerChat" element={<ListenerChat />} /> */}
         {/* css done */}
+
         <Route path="/listenerlogin" element={<ListenerLogin />} />
         {/* done */}
         <Route path="/" element={<Landing_page />} />
@@ -202,20 +209,20 @@ function App() {
         {/* done */}
         <Route path="/blog/blog/:id" element={<BlogPage />} />
         {/* done iske andder ka navigation info dekhna h */}
+        {/*         
         <Route path="/clientdetails" element={<Clientdetails />} />
         <Route path="/clientdetailsadmin" element={<AllClientsadmin />} />
-        {/* iska ek chiz phas rha h */}
-        <Route path="/particularClient" element={<ParticularClient />} />
+        <Route path="/particularClient" element={<ParticularClient />} /> */}
 
-        <Route path="/internDashboard" element={<InternDashoard />} />
-        {/* done */}
+        {/* <Route path="/internDashboard" element={<InternDashoard />} /> */}
+
         <Route path="/contactUs" element={<ContactUs />} />
         {/* not useful */}
         <Route path="/videocall" element={<VideoCall />} />
         {/* done */}
         <Route path="/RegisterUser" element={<RegisterUser />} />
         {/* isko pc m hi chalana better h for now */}
-        <Route path="/admindashboard" element={<AdminDashboard />} />
+        {/* <Route path="/admindashboard" element={<AdminDashboard />} /> */}
         <Route exact path="/sop" element={<SOP />} />
         <Route exact path="/lor" element={<LOR />} />
 
@@ -227,15 +234,15 @@ function App() {
         {/* done */}
         <Route path="/SignUpAdmin" element={<AdminSignup />} />
         {/* page does not found */}
-        {/* <Route path="/SignUpChecker" element={<CheckerSignup />} /> */}
+        <Route path="/SignUpChecker" element={<CheckerSignup />} />
         {/* done */}
         <Route path="/SignInChecker" element={<CheckerLogin />} />
         {/* done */}
-        <Route path="/approvalstatus" element={<ApprovalStatus />} />
+        {/* <Route path="/approvalstatus" element={<ApprovalStatus />} /> */}
         {/*<Route path="/Checkertable" element={<CheckerDashboard />} />*/}
         {/* done */}
 
-        <Route path="/AllPaidClientList" element={<AllPaidClientList />} />
+        {/* <Route path="/AllPaidClientList" element={<AllPaidClientList />} /> */}
         {/* 
         <PrivateRoute path="/">
         <Route path="/Checkertable" element={<CheckerDashboard />} />
@@ -249,6 +256,29 @@ function App() {
           <Route path="/Checkertable" element={<CheckerDashboard />} />
           <Route path="/CheckerDashboard" element={<CheckerMainboard />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/ListenerChat" element={<ListenerChat />} />
+          <Route path="/particularClient" element={<ParticularClient />} />
+          <Route path="/internDashboard" element={<InternDashoard />} />
+          <Route path="/clientdetails" element={<Clientdetails />} />
+          <Route path="/approvalstatus" element={<ApprovalStatus />} />
+        </Route>
+
+        {/* <Route path="/internDashboard" element={<InternDashoard />} />
+        <Route path="/clientdetails" element={<Clientdetails />} />
+        <Route path="/approvalstatus" element={<ApprovalStatus />} /> */}
+
+        {/* <Route element={<InternRoute />}>
+          <Route path="/internDashboard" element={<InternDashoard />} />
+          <Route path="/clientdetails" element={<Clientdetails />} />
+          <Route path="/particularClient" element={<ParticularClient />} />
+          <Route path="/approvalstatus" element={<ApprovalStatus />} />
+        </Route> */}
+
+        <Route element={<AdminRoute />}>
+          <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/AllPaidClientList" element={<AllPaidClientList />} />
+          <Route path="/clientdetailsadmin" element={<AllClientsadmin />} />
           <Route path="/internList" element={<InternList />} />
         </Route>
       </Routes>

@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, { useEffect ,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 // import { ChatState } from "../../context/ChatProvider";
 
@@ -15,56 +15,39 @@ const AdminNav = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const userInfoString = localStorage.getItem("userInfo");
+  const userInfo = JSON.parse(userInfoString);
+
+  function Logout() {
+    // Remove the userInfo data from local storage
+    localStorage.removeItem("userInfo");
+
+    // Clear the userInfo state
+    userInfo = null;
+
+    // Redirect the user to the login page
+    const history = useNavigate();
+    history("/adminlogin");
+  }
   return (
     <>
       {" "}
-      {/* <Navbar style={{ backgroundColor: "#a6b7ff", height: "5rem" }}>
-        <Container>
-          <LinkContainer to="/">
-            <Navbar.Brand>SOPIFY ADMIN DASHBOARD</Navbar.Brand>
-          </LinkContainer>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <LinkContainer to="/adminDashboard">
-                <Nav.Link>Home</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/clientdetails">
-                <Nav.Link>All Clients</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/chat">
-                <Nav.Link>My Chats</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/internList">
-                <Nav.Link>Interns List </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/AllPaidClientList">
-                <Nav.Link>Paid Client List </Nav.Link>
-              </LinkContainer> */}
-              {/* <LinkContainer to="/particularClient">
-                <Nav.Link>Particular Client Info</Nav.Link>
-              </LinkContainer> */}
-              {/* <LinkContainer to="/approvalstatus">
-                <Nav.Link>Approval Status</Nav.Link>
-              </LinkContainer> */}
-            {/* </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
-      <div className="navbars" style={{backgroundColor:"#a6b7ff",height:"5rem"}}>
+      <div
+        className="navbars"
+        style={{ backgroundColor: "#a6b7ff", height: "5rem" }}
+      >
         <div className="navbar-child">
           <div className="navs-logo">
             {/* <img src={logo} className="navs-logoImg" alt="" /> */}
             <NavLink className="Navlink" to="/checkerDashboard">
-            SOPIFY ADMiN DASHBOARD
+              SOPIFY ADMIN DASHBOARD
             </NavLink>
-            
           </div>
           <ul className="navbar-ul">
             <NavLink className="Navlink" to="/adminDashboard">
               <li className="navbar-li">Home</li>
-                          </NavLink>
-            <NavLink className="Navlink" to="/clientdetails">
+            </NavLink>
+            <NavLink className="Navlink" to="/clientdetailsadmin">
               <li className="navbar-li">All Clients</li>
             </NavLink>
             <NavLink className="Navlink" to="/chat">
@@ -76,7 +59,9 @@ const AdminNav = () => {
             <NavLink className="Navlink" to="/AllPaidClientList">
               <li className="navbar-li">Paid Client List</li>
             </NavLink>
-            
+            <NavLink className="Navlink" onClick={Logout}>
+              <li className="navbar-li">Logout</li>
+            </NavLink>
           </ul>
         </div>
         <div className="R_NavBar-nav">
@@ -104,7 +89,7 @@ const AdminNav = () => {
                   <a href="/adminDashboard">Admin Dashoard</a>
                 </li>
                 <li className="R_navs-list">
-                  <a href="/clientdetails">All Clients</a>
+                  <a href="/clientdetailsadmin">All Clients</a>
                 </li>
                 <li className="R_navs-list">
                   <a href="/chat">My Chats</a>
@@ -115,7 +100,6 @@ const AdminNav = () => {
                 <li className="R_navs-list">
                   <a href="/AllPaidClientList">Paid Client List</a>
                 </li>
-                
               </ul>
             </Offcanvas.Body>
           </Offcanvas>

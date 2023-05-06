@@ -284,6 +284,7 @@ const authAdmin = asyncHandler(async (req, res) => {
       phone: user.phone,
       isIntern: user.isIntern,
       status: user.status,
+      isAdmin: user.isAdmin,
       token: generateToken(user._id),
     });
   } else {
@@ -308,6 +309,7 @@ const authChecker = asyncHandler(async (req, res) => {
       phone: user.phone,
       isIntern: user.isIntern,
       status: user.status,
+      isAdmin: user.isAdmin,
       token: generateToken(user._id),
     });
   } else {
@@ -558,12 +560,15 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
     console.log(bool[0].checkerSentBoolean);
     console.log(a);
     if (a == true) {
-      const currentDate = new Date();
+      // const currentDate = new Date();
+      const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+      const currentDate = new Date(Date.now() - timezoneOffsetInMs);
       const options = {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
       };
+
       const dateString = currentDate.toLocaleDateString("en-US", options);
       console.log(dateString);
 
@@ -579,10 +584,10 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
         {
           // $set: { checkerSent: true },
           $set: {
-            "myClientsArray.$[elem].FirstSubmission": dateString,
+            "myClientsArray.$[elem].FirstSubmission": currentDate,
             checkerSentBoolean: false,
             clientEmail: Clientemail,
-            DateFirstSubmission: dateString,
+            DateFirstSubmission: currentDate,
           },
           // $set: {
           //   checkerSentBoolean: false,
@@ -622,6 +627,8 @@ const approvalbyChecker = asyncHandler(async (req, res) => {
     const options = { year: "numeric", month: "2-digit", day: "2-digit" };
     const dateString = currentDate.toLocaleDateString("en-US", options);
     console.log(dateString);
+    const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+    const approvalDate = new Date(Date.now() - timezoneOffsetInMs);
 
     // const firstSubDate = await User.find({ email });
     // const approval = firstSubDate[0].approval;
@@ -640,10 +647,10 @@ const approvalbyChecker = asyncHandler(async (req, res) => {
           checkerSent: false,
           checkerSentBoolean: true,
           Corrections: Correcetions,
-          approvalDateFinal: dateString,
+          approvalDateFinal: approvalDate,
           // DateFirstSubmission: dateString,
           // "myClientsArray.$[elem].FirstSubmission": dateString,
-          "myClientsArray.$[elem].approvalDate": dateString,
+          "myClientsArray.$[elem].approvalDate": approvalDate,
           "myClientsArray.$[elem].completion": "Completed",
         },
       },
@@ -735,7 +742,11 @@ const Duration = asyncHandler(async (req, res) => {
 
     const firstSubmissionDate = new Date(bool[0].DateFirstSubmission);
     console.log("k", firstSubmissionDate);
-    const approvalDate = new Date();
+    // const approvalDate = new Date();
+
+    const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+    const approvalDate = new Date(Date.now() - timezoneOffsetInMs);
+    // const approvalDate = new Date();
     console.log("a", approvalDate);
 
     // Calculate the difference in milliseconds

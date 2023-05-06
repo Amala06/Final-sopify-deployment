@@ -2048,23 +2048,50 @@ export default function RegisterListener() {
                   </RadioGroup>
                 </FormControl>
                 <br />
-                <Input
+
+                <FormControl id="url" isRequired>
+                  <FormLabel spacing={[1, 5]}>
+                    Upload your file/format{" "}
+                  </FormLabel>
+                  <Input
+                    type="file"
+                    name="file"
+                    placeholder="Upload File"
+                    onChange={handleFileChange}
+                    accept="application/pdf"
+                  ></Input>
+                </FormControl>
+
+                {/* <Input
                   type="file"
                   name="file"
                   placeholder="Upload resume"
                   onChange={handleFileChange}
                   accept="application/pdf"
-                ></Input>
-                <button onClick={handleUpload}>upload</button>
+                ></Input> */}
+
+                {/* <button onClick={handleUpload}>upload</button> */}
                 <br />
 
-                <Input
+                <FormControl id="url" isRequired>
+                  <FormLabel spacing={[1, 5]}>Upload your resume</FormLabel>
+                  <Input
+                    type="file"
+                    name="resume"
+                    placeholder="Upload resume"
+                    accept="application/pdf"
+                    onChange={handleResumeChange}
+                  ></Input>
+                </FormControl>
+
+                {/* <Input
                   type="file"
                   name="resume"
                   placeholder="Upload resume"
                   accept="application/pdf"
                   onChange={handleResumeChange}
-                ></Input>
+                ></Input> */}
+
                 <br />
                 <Text>
                   Lastly, if you have any references then do contact us for

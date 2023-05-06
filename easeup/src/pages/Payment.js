@@ -15,15 +15,18 @@ import lc from "../Images/lock.png";
 import vd1 from "../Images/vd1.mp4";
 import vd2 from "../Images/vd2.mp4";
 import Navigation from "../components/Navigation";
-import Navbar from "../components/Navbar/Navbar";
-import Payment2 from "../InfoPages/Payment1/payment";
-import qrcode from '../Images/qrcode.png'
-import locked from '../Images/locked.png'
-import unlocked from '../Images/unlocked.png'
 
-import '../InfoPages/Payment1/payment.css'
-import '../InfoPages/Payment2/paymentDone.css'
-import './Payment.css'
+import Navbarlogout from "../components/Navbar/Navbarlogout";
+
+import Payment2 from "../InfoPages/Payment1/payment";
+import qrcode from "../Images/qr2.jpeg";
+
+import locked from "../Images/locked.png";
+import unlocked from "../Images/unlocked.png";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import "../InfoPages/Payment1/payment.css";
+import "../InfoPages/Payment2/paymentDone.css";
+import "./Payment.css";
 // import { downloadProject } from "../../../backend/controllers/userController";
 // import { InternNavigation } from "./InternNavigation";
 // import { useToast } from "@chakra-ui/react";
@@ -355,103 +358,7 @@ const Payment = () => {
 
   return (
     <>
-      <Navbar />
-      {/* <InternNavigation /> */}
-      {/* <p>Particluar Client list</p> */}
-      {/* <Button onClick={FetchInternClientarray}>ok</Button> */}
-      {/* <br /> */}
-
-      {internItem.clientSideDisplay == "null" ? (
-        <>
-          <video src={vd1} autoplay loop />
-          <div className="Payment_maindiv">
-
-          
-          <p>Let's get update of your work &nbsp; </p>
-          <Button
-            variant="btn btn-outline-secondary"
-            // style={{
-            //   display:"felx",
-            //   marginTop: "-80rem",
-            //   position: "relative",
-            //   marginLeft: "46rem",
-            // }}
-          >
-            <Link to="/ListenerChat">Chat</Link>
-          </Button>
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
-      {internItem.clientSideDisplay == "chosen" &&
-      internItem.approval == "true" ? (
-        <>
-          <div>Your work is selected</div>
-          <video src={vd2} autoplay loop type="video/mp4" />
-        </>
-      ) : (
-        <></>
-      )}
-
-      {/* {internItem.clientSideDisplay == "send" ? <></> : <></>} */}
-      {/* {internItem.price} */}
-
-      {/* {internItem.price == 0 && internItem.approval == "null" ? (
-        <>
-          <div>Rs.{internItem.price}</div>
-        </>
-      ) : (
-        <></>
-      )} */}
-
-      {internItem.price != 0 &&
-      internItem.IsAmountpaid == false &&
-      internItem.approval == "null" ? (
-        <>
-          {/* <Button
-          className="Payment_button"
-            variant="light"
-          >
-            <Link to="/ListenerChat">Chat</Link>
-          </Button>
-          <button onClick={sendMessage}>WhatsApp</button>
-          <img src={lc}></img> */}
-          <div className="payment1_grid-container">
-                <div className="payment1_left-box">
-                    <img src= {qrcode} alt="qrcode" width={"90%"}/>
-                    <h1 className="payment1_amount"> Rs.{internItem.price}</h1>
-                    <h1>Scan the QR code to pay the amount</h1>
-                </div>
-                <div className="payment1_right-box">
-                    <h2 className="payment1_right-heading">To avail your work ,pay now!</h2>
-                    <img src = {locked} alt="locked" width={"60%"} />
-                </div>
-            </div>
-          {/* <p
-            style={{
-              height: "4rem",
-              width: "15rem",
-              marginTop: "-21rem",
-              position: "absolute",
-              //   backgroundColor: "#2d3867",
-              //   padding: "1rem 1rem",
-              color: "black",
-              marginLeft: "16rem",
-              //   borderRadius: "30px",
-              fontSize: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            Rs. {internItem.price}
-          </p> */}
-
-          {/* <div>file img locked</div>
-          <img src={ulc}></img> */}
-        </>
-      ) : (
-        <></>
-      )}
+      <Navbarlogout />
 
       {internItem.IsAmountpaid == true && internItem.approval == "null" ? (
         <>
@@ -465,88 +372,235 @@ const Payment = () => {
           >
             <Link to="/ListenerChat">Chat</Link>
           </Button>
-          {/* <img src={ulc}></img> */}
-          {/* Amount paid successfully */}
-          {/* <div>{internItem.projectPath}</div> */}
-          {/* <button onClick={DownloadProject}>j</button> */}
-          {/* <div style={{ marginTop: "-20rem", marginLeft: "6rem" }}>
-            <a
-              style={{
-                marginBottom: "0.5rem",
-                background: "#a6b7ff",
-              }}
-              id="download-link"
-              href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
-              download
-            >
-              Download Work
-            </a>
-          </div> */}
           <div className="grid-container-pd">
-                <div className="left-box-pd">
-                    <img src= {qrcode} alt="qrcode" width={"90%"}/>
-                    <h1 className='PD_text1'>Amount Paid</h1>
-                    <h1 className="amount-pd"> Rs. {internItem.price}</h1>
-                </div>
-                <div className="right-box-pd">
-                    <h2 className="right-heading-pd">Here is your work!!!</h2>
-                    <img src = {unlocked} alt="locked" width={"70%"} />
-                    <a
-              style={{
-                marginBottom: "0.5rem",
-                // background: "#a6b7ff",
-              }}
-              id="download-link"
-              href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
-              download
-            >
-                    <button className="download-btn">Download Work</button>
-            </a>
-                </div>
+            <div className="left-box-pd">
+              <img src={qrcode} alt="qrcode" width={"90%"} />
+              <h1 className="PD_text1">Amount Paid</h1>
+              <h1 className="amount-pd"> Rs. {internItem.price}</h1>
             </div>
-          {/* <p
-            style={{
-              height: "4rem",
-              width: "15rem",
-              marginTop: "-19rem",
-              position: "absolute",
-              color: "black",
-              marginLeft: "15rem",
-              fontSize: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            Rs. {internItem.price}
-          </p> */}
-          {/* <button
-            style={{
-              height: "4rem",
-              width: "15rem",
-              marginTop: "-23rem",
-              position: "absolute",
-              backgroundColor: "#2d3867",
-              padding: "1rem 1rem",
-              color: "white",
-              marginLeft: "56rem",
-              borderRadius: "30px",
-              fontSize: "20px",
-            }}
-          >
-            <a
-              style={{
-                marginBottom: "0.5rem",
-              }}
-              id="download-link"
-              href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
-              download
-            >
-              Download Work
-            </a>
-          </button> */}
+            <div className="right-box-pd">
+              <h2 className="right-heading-pd">Here is your work!!!</h2>
+              <img src={unlocked} alt="locked" width={"70%"} />
+              <a
+                style={{
+                  marginBottom: "0.5rem",
+                  // background: "#a6b7ff",
+                }}
+                id="download-link"
+                href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
+                download
+              >
+                <button className="download-btn">Download Work</button>
+              </a>
+            </div>
+          </div>
         </>
       ) : (
         <></>
       )}
+
+      {internItem.price != 0 &&
+      internItem.IsAmountpaid == false &&
+      internItem.approval == "null" ? (
+        <>
+          <div className="payment1_grid-container">
+            <div className="payment1_left-box">
+              <img src={qrcode} alt="qrcode" width={"90%"} />
+              <h1 className="payment1_amount"> Rs.{internItem.price}</h1>
+              <h1>Scan the QR code to pay the amount</h1>
+              <br />
+              <Button
+                variant="success"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {/* <a href="https://api.whatsapp.com/send?phone=918878923910text=Hello,%Enter%your%20name%20and%20your%20wmail%20along%20with%20your%20screenshot!">
+                  hiihi
+                </a> */}
+                <AiOutlineWhatsApp
+                  style={{ marginRight: "5px", fontSize: "1.7rem" }}
+                />
+                <a
+                  href="https://api.whatsapp.com/send?phone=917016522535&text=Hello,%20send%20your%20name,email%20and%20screenshot%20of%20payment!"
+                  target="_blank"
+                  style={{ textDecoration: "none" }}
+                >
+                  Send screenshot here
+                </a>
+              </Button>{" "}
+            </div>
+            <div className="payment1_right-box">
+              <h2 className="payment1_right-heading">
+                To avail your work ,pay now!
+              </h2>
+              <img src={locked} alt="locked" width={"60%"} />
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
+
+      {internItem.clientSideDisplay == "null" ? (
+        <>
+          <video src={vd1} autoplay loop />
+          {/* <div className="Payment_maindiv"> */}
+          {/* <p>Let's get update of your work &nbsp; </p>
+            <Button
+              variant="btn btn-outline-secondary"
+              // style={{
+              //   display:"felx",
+              //   marginTop: "-80rem",
+              //   position: "relative",
+              //   marginLeft: "46rem",
+              // }}
+            >
+              <Link to="/ListenerChat">Chat</Link>
+            </Button> */}
+          {/* <Button
+              variant="secondary"
+           
+              onClick={FetchInternClientarray}
+            >
+              Refresh to know status
+            </Button> */}
+          {/* </div> */}
+        </>
+      ) : (
+        <></>
+      )}
+
+      {internItem.clientSideDisplay == "chosen" &&
+      internItem.approval == "true" ? (
+        <>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "20px",
+              fontSize: "1.5rem",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
+            We are working on your project stay updated!
+            {/* <br /> */}
+            <Button
+              variant="info"
+              // style={{
+              //   marginTop: "-70rem",
+              //   position: "relative",
+              //   marginLeft: "42rem",
+              // }}
+            >
+              <Link to="/ListenerChat">Chat</Link>
+            </Button>
+            <Button
+              variant="secondary"
+              // style={{
+              //   marginTop: "-70rem",
+              //   position: "relative",
+              //   marginLeft: "42rem",
+              // }}
+              onClick={FetchInternClientarray}
+            >
+              Refresh to know status
+            </Button>
+          </div>
+        </>
+      ) : (
+        <>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "20px",
+              fontSize: "1.5rem",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
+            We are working on your project stay updated!
+            {/* <br /> */}
+            <Button
+              variant="info"
+              style={{
+                marginRight: "1rem",
+                marginLeft: "1rem",
+              }}
+            >
+              <Link to="/ListenerChat">Chat</Link>
+            </Button>
+            <Button
+              variant="secondary"
+              // style={{
+              //   marginTop: "-70rem",
+              //   position: "relative",
+              //   marginLeft: "42rem",
+              // }}
+              onClick={FetchInternClientarray}
+            >
+              Refresh to know status
+            </Button>
+          </div>{" "}
+        </>
+      )}
+
+      {/* {internItem.clientSideDisplay == "send" ? <></> : <></>} */}
+      {/* {internItem.price} */}
+
+      {/* {internItem.price == 0 && internItem.approval == "null" ? (
+        <>
+          <div>Rs.{internItem.price}</div>
+        </>
+      ) : (
+        <></>
+      )} */}
+
+      {/* {internItem.price != 0 &&
+      internItem.IsAmountpaid == false &&
+      internItem.approval == "null" ? (
+        <>
+          <div className="payment1_grid-container">
+            <div className="payment1_left-box">
+              <img src={qrcode} alt="qrcode" width={"90%"} />
+              <h1 className="payment1_amount"> Rs.{internItem.price}</h1>
+              <h1>Scan the QR code to pay the amount</h1>
+            </div>
+            <div className="payment1_right-box">
+              <h2 className="payment1_right-heading">
+                To avail your work ,pay now!
+              </h2>
+              <img src={locked} alt="locked" width={"60%"} />
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )} */}
+
+      {/* <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginTop: "20px",
+          fontSize: "1.5rem",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        We are working on your project stay updated!
+       
+        <Button
+          variant="primary"
+         
+        >
+          <Link to="/ListenerChat">Chat</Link>
+        </Button>
+      </div> */}
     </>
   );
 };

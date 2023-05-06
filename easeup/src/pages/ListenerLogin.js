@@ -8,8 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import Navigation from "../components/Navigation";
 // import Navbar from "./components/Navbar/Navbar";
 import Navbar from "../components/Navbar/Navbar";
-import img1 from '../Images/listnerLogin.png'
-
+import img1 from "../Images/listnerLogin.png";
 
 import "../styles/login.css";
 
@@ -65,7 +64,7 @@ const ListenerLogin = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history("/ListenerChat");
+      history("/payment");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -85,8 +84,8 @@ const ListenerLogin = () => {
 
       <Container>
         <Row>
-          <Col md={5} className="login__bg" >
-          <img className="listnerLoginimage" src={img1} />
+          <Col md={5} className="login__bg">
+            <img className="listnerLoginimage" src={img1} />
           </Col>
           <Col
             md={7}
@@ -94,7 +93,10 @@ const ListenerLogin = () => {
           >
             {/* </Col> */}
             <Form style={{ width: "80%", maxWidth: 500 }}>
-              <Form.Group className="mb-3 listnerLogin_Form" controlId="formBasicEmail">
+              <Form.Group
+                className="mb-3 listnerLogin_Form"
+                controlId="formBasicEmail"
+              >
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   required
@@ -117,10 +119,7 @@ const ListenerLogin = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                 />{" "}
-                <button
-                  className="showButton"
-                  onClick={handleClick}
-                >
+                <button className="showButton" onClick={handleClick}>
                   {show ? "Hide" : "Show"}
                 </button>
               </Form.Group>

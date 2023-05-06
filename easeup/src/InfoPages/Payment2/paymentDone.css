@@ -1,6 +1,6 @@
 .grid-container-pd {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px,1fr)) ;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
     text-align: center;
     /* margin: 0; */
@@ -12,7 +12,7 @@
     font-size: 2rem;
 }
 
-.PD_text1{
+.PD_text1 {
     font-size: 2rem;
     margin-top: 30px;
 }
@@ -26,13 +26,13 @@
     font-weight: bold;
     font-size: 2.5rem;
     margin-bottom: 5%;
-    
+
 
 }
 
 .right-box-pd {
-    background: rgb(5,75,174);
-    background: linear-gradient(360deg, rgba(5,75,174,1) 0%, rgba(178,103,223,1) 120.95%);
+    background: rgb(5, 75, 174);
+    background: linear-gradient(360deg, rgba(5, 75, 174, 1) 0%, rgba(178, 103, 223, 1) 120.95%);
     margin: 0;
     padding: 18% 10% 20% 10%;
     display: flex;
@@ -54,9 +54,9 @@
 }
 
 @media only screen and (max-width: 985px) {
-    
+
 
     .download-btn {
         margin-top: 200px;
-    } 
+    }
 }

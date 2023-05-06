@@ -122,6 +122,12 @@ const ApprovalStatus = () => {
       </div>
       <div className="ApprovStatus_head_sub">
         Click here to know the status:
+        {/* <Button
+          className="Approvstatus_button"
+          onClick={FetchInternClientarray}
+        >
+          Fetch
+        </Button> */}
         <Button
           className="Approvstatus_button"
           onClick={FetchInternClientarray}

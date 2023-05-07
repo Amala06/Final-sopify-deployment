@@ -511,7 +511,7 @@ function InternList() {
                               <br /> <br />
                               <a
                                 id="download-link"
-                                href={`http://localhost:8080/api/user/download/resume/${clientData.email}`}
+                                href={`/api/user/download/resume/${clientData.email}`}
                                 download
                               >
                                 Download Resume
@@ -521,7 +521,7 @@ function InternList() {
                               <br /> <br />
                               <a
                                 id="download-link"
-                                href={`http://localhost:8080/api/user/download/file/${clientData.email}`}
+                                href={`/api/user/download/file/${clientData.email}`}
                                 download
                               >
                                 Download File

@@ -18,7 +18,7 @@ import {
   Stack,
   Modal,
 } from "react-bootstrap";
-import './ClientDetails.css'
+import "./ClientDetails.css";
 import ParticularClient from "./ParticularClient";
 import { useNavigate } from "react-router";
 // import { ChatState } from "../../context/ChatProvider";
@@ -440,7 +440,8 @@ function Clientdetails() {
                         </ModalContent>
                       </Modal> */}
 
-                      <Button className="ClientDetailsButton"
+                      <Button
+                        className="ClientDetailsButton"
                         variant="primary"
                         onClick={() =>
                           handleShow(setEmailClientModal(data.email))
@@ -475,7 +476,7 @@ function Clientdetails() {
                           <br /> <br />
                           <a
                             id="download-link"
-                            href={`http://localhost:8080/api/user/download/resume/${clientData.email}`}
+                            href={`/api/user/download/resume/${clientData.email}`}
                             download
                           >
                             Download Resume
@@ -485,7 +486,7 @@ function Clientdetails() {
                           <br /> <br />
                           <a
                             id="download-link"
-                            href={`http://localhost:8080/api/user/download/file/${clientData.email}`}
+                            href={`/api/user/download/file/${clientData.email}`}
                             download
                           >
                             Download File
@@ -504,9 +505,10 @@ function Clientdetails() {
                         onClick={() => setEmail(data.email)}
                         className="ClientDetailsAccordian"
                       >
-                        <Accordion.Item >
-                          <Accordion.Header >
-                            <Button className="ClientDetailsButton2"
+                        <Accordion.Item>
+                          <Accordion.Header>
+                            <Button
+                              className="ClientDetailsButton2"
                               variant="warning"
                               style={{ fontSize: "14px" }}
                             >

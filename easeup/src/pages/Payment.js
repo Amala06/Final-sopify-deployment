@@ -387,7 +387,7 @@ const Payment = () => {
                   // background: "#a6b7ff",
                 }}
                 id="download-link"
-                href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
+                href={`/api/user/download/project/${userInfo.email}`}
                 download
               >
                 <button className="download-btn">Download Work</button>

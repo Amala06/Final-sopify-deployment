@@ -16,7 +16,8 @@ import animationData from "../../animation/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./UpdateGroupChat";
 // import { calcLength } from "framer-motion";
-const ENDPOINT = "http://localhost:8080";
+// const ENDPOINT = "http://localhost:8080";
+const ENDPOINT = "";
 var socket, selectedChatCompare;
 
 //174,30,313

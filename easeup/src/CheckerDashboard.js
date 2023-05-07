@@ -515,7 +515,7 @@
 //                     <td>
 //                       <a
 //                         id="download-link"
-//                         href={`http://localhost:8080/api/user/download/file/${data.email}`}
+//                         href={`/api/user/download/file/${data.email}`}
 //                         download
 //                       >
 //                         Download Task
@@ -573,7 +573,7 @@
 //                           <br /> <br />
 //                           <a
 //                             id="download-link"
-//                             href={`http://localhost:8080/api/user/download/resume/${clientData.email}`}
+//                             href={`/api/user/download/resume/${clientData.email}`}
 //                             download
 //                             style={{
 //                               backgroundColor: "skyblue",
@@ -587,7 +587,7 @@
 //                           <br /> <br />
 //                           <a
 //                             id="download-link"
-//                             href={`http://localhost:8080/api/user/download/file/${clientData.email}`}
+//                             href={`/api/user/download/file/${clientData.email}`}
 //                             download
 //                             style={{
 //                               backgroundColor: "#a6b7ff",
@@ -1552,7 +1552,7 @@ function CheckerDashboard() {
                     <td>
                       <a
                         id="download-link"
-                        href={`http://localhost:8080/api/user/download/file/${data.email}`}
+                        href={`/api/user/download/file/${data.email}`}
                         download
                       >
                         Download Task
@@ -1610,7 +1610,7 @@ function CheckerDashboard() {
                           <br /> <br />
                           <a
                             id="download-link"
-                            href={`http://localhost:8080/api/user/download/resume/${clientData.email}`}
+                            href={`/api/user/download/resume/${clientData.email}`}
                             download
                             style={{
                               backgroundColor: "skyblue",
@@ -1624,7 +1624,7 @@ function CheckerDashboard() {
                           <br /> <br />
                           <a
                             id="download-link"
-                            href={`http://localhost:8080/api/user/download/file/${clientData.email}`}
+                            href={`/api/user/download/file/${clientData.email}`}
                             download
                             style={{
                               backgroundColor: "#a6b7ff",

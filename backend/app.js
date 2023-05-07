@@ -37,7 +37,7 @@ app.use("/api/message", messageRoutes);
 const __dirname1 = path.resolve();
 // console.log(process.env);
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "/easeup/build")));
+  app.use(express.static(path.join(__dirname1, "/build")));
   console.log("running in prod");
   console.log(path.join(__dirname1, "/easeup/build"));
 

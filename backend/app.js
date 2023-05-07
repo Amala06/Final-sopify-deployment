@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === "production") {
   console.log("running in prod");
   console.log(path.join(__dirname1, "/easeup/build"));
 
-  app.use("*", express.static(path.join(__dirname1, "/easeup/build")));
+  app.use("*", express.static(path.join(__dirname1, "/build")));
   // res.sendFile(path.resolve(__dirname1, "easeup", "build", "index.html"));
 } else {
   app.get("/", (req, res) => {

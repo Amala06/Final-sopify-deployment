@@ -561,16 +561,25 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
     console.log(a);
     if (a == true) {
       // const currentDate = new Date();
+      // const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+      // const currentDate = new Date(Date.now() - timezoneOffsetInMs);
+      const moment = require("moment-timezone");
+
       const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
-      const currentDate = new Date(Date.now() - timezoneOffsetInMs);
+      const currentDate = moment(Date.now() - timezoneOffsetInMs);
       const options = {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
       };
+      const finaldate = currentDate.tz("Asia/Kolkata").format("YYYY-MM-DD");
+
+      console.log(currentDate.tz("Asia/Kolkata").format("YYYY-MM-DD"));
+      console.log("finalDate: ", finaldate);
 
       const dateString = currentDate.toLocaleDateString("en-US", options);
       console.log(dateString);
+      console.log(currentDate);
 
       // const now = new Date(); // get current time
       // const seconds = Math.floor(now.getTime() / 1000);
@@ -584,7 +593,7 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
         {
           // $set: { checkerSent: true },
           $set: {
-            "myClientsArray.$[elem].FirstSubmission": currentDate,
+            "myClientsArray.$[elem].FirstSubmission": finaldate,
             checkerSentBoolean: false,
             clientEmail: Clientemail,
             DateFirstSubmission: currentDate,

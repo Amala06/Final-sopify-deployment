@@ -629,7 +629,7 @@ const approvalbyChecker = asyncHandler(async (req, res) => {
     console.log(dateString);
     const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
     const approvalDate = new Date(Date.now() - timezoneOffsetInMs);
-
+    console.log(approvalDate);
     // const firstSubDate = await User.find({ email });
     // const approval = firstSubDate[0].approval;
     // const date1 = new Date(firstSubDate[0].myClientsArray[0].FirstSubmission);

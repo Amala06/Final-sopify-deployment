@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 import SideDrawer from "../components/miscellanous/SideDrawer";
 import MyChats from "../components/miscellanous/MyChats";
 import ChatBox from "../components/miscellanous/ChatBox";
-import '../styles/Chat.css'
+import "../styles/Chat.css";
 
 const Chat = () => {
   const { user } = ChatState();
@@ -25,24 +25,22 @@ const Chat = () => {
       {user && <SideDrawer />}
 
       <div className="chat_mainDiv">
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        w="100%"
-        h="91.5vh"
-        p="10px"
-      >
-        <div className="chat_subDiv">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          w="100%"
+          h="91.5vh"
+          p="10px"
+        >
+          <div className="chat_subDiv">
+            {user && <MyChats fetchAgain={fetchAgain} />}
 
-        {user && <MyChats fetchAgain={fetchAgain} />}
-
-        {user && (
-          <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
-          
-          )}
+            {user && (
+              <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
+            )}
           </div>
-      </Box>
-        </div>
+        </Box>
+      </div>
     </div>
   );
 };

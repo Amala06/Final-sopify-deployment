@@ -56,7 +56,7 @@ app.use(errorHandler);
 
 const server = app.listen(
   port,
-  console.log(`server started at port http://localhost:${port}`)
+  console.log(`server started at port http://0.0.0.0:${port}`)
 );
 
 const io = require("socket.io")(server, {

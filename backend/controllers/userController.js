@@ -597,7 +597,7 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
             "myClientsArray.$[elem].FirstSubmission": finaldate,
             checkerSentBoolean: false,
             clientEmail: Clientemail,
-            DateFirstSubmission: currentDate,
+            DateFirstSubmission: finaldate,
           },
           // $set: {
           //   checkerSentBoolean: false,

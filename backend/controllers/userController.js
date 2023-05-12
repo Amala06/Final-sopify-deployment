@@ -562,12 +562,12 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
     console.log(a);
     if (a == true) {
       // const currentDate = new Date();
-      // const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
-      // const currentDate = new Date(Date.now() - timezoneOffsetInMs);
-      const moment = require("moment-timezone");
-
       const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
-      const currentDate = moment(Date.now() - timezoneOffsetInMs);
+      const currentDate = new Date(Date.now() - timezoneOffsetInMs);
+      // const moment = require("moment-timezone");
+
+      // const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+      // const currentDate = moment(Date.now() - timezoneOffsetInMs);
       const options = {
         year: "numeric",
         month: "2-digit",

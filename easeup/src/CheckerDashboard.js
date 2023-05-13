@@ -1406,7 +1406,7 @@ function CheckerDashboard() {
   const SubmitApproval = async () => {
     try {
       const res = await axios.put(
-        `/api/user/approvalbyChecker/${myinternEmail}/${myclientemail}`,
+        `/api/user/approvalbyChecker/${myinternEmail}/${myclientemail}/${userInfo.email}`,
         {
           Corrections: Corrections,
 

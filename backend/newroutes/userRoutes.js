@@ -109,7 +109,10 @@ router.delete(
 
 router.put("/duration/:email/:clientEmail", Duration);
 
-router.put("/approvalbyChecker/:email/:clientEmail", approvalbyChecker);
+router.put(
+  "/approvalbyChecker/:email/:clientEmail/:CheckerEmail",
+  approvalbyChecker
+);
 
 router.put("/clientarraystatusupdate/:email", UpdateClientArrayStatus);
 

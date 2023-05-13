@@ -561,24 +561,42 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
     console.log(bool[0].checkerSentBoolean);
     console.log(a);
     if (a == true) {
-      // const currentDate = new Date();
-      const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
-      const currentDate = new Date(Date.now() - timezoneOffsetInMs);
-      // const moment = require("moment-timezone");
-
-      // const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
-      // const currentDate = moment(Date.now() - timezoneOffsetInMs);
+      const currentDate = new Date();
       const options = {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
+        timeZone: "Asia/Kolkata",
       };
-      const finaldate = currentDate.tz("Asia/Kolkata").format("YYYY-MM-DD");
-
-      console.log(currentDate.tz("Asia/Kolkata").format("YYYY-MM-DD"));
-      console.log("finalDate: ", finaldate);
-
       const dateString = currentDate.toLocaleDateString("en-US", options);
+      console.log("dateString", dateString);
+      const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+      const firstDate = new Date(Date.now() - timezoneOffsetInMs);
+      console.log("firstDate", firstDate);
+
+      // const currentDate = new Date();
+      // const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+      // const currentDate = new Date(Date.now() - timezoneOffsetInMs);
+
+      // const moment = require("moment-timezone");
+
+      // const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
+      // const currentDate = moment(Date.now() - timezoneOffsetInMs);
+
+      // const options = {
+      //   year: "numeric",
+      //   month: "2-digit",
+      //   day: "2-digit",
+      // };
+      // const finaldate = currentDate.tz("Asia/Kolkata").format("YYYY-MM-DD");
+
+      // console.log(currentDate.tz("Asia/Kolkata").format("YYYY-MM-DD"));
+      // console.log("finalDate: ", finaldate);
+
+      // const dateString = currentDate.toLocaleDateString(
+      //   "Asia/Kolkata",
+      //   options
+      // );
       console.log(dateString);
       console.log(currentDate);
 
@@ -594,10 +612,10 @@ const ChecherBooleanMain = asyncHandler(async (req, res) => {
         {
           // $set: { checkerSent: true },
           $set: {
-            "myClientsArray.$[elem].FirstSubmission": finaldate,
+            "myClientsArray.$[elem].FirstSubmission": firstDate,
             checkerSentBoolean: false,
             clientEmail: Clientemail,
-            DateFirstSubmission: finaldate,
+            DateFirstSubmission: firstDate,
           },
           // $set: {
           //   checkerSentBoolean: false,
@@ -634,7 +652,13 @@ const approvalbyChecker = asyncHandler(async (req, res) => {
     const Clientemail = req.params.clientEmail;
     const currentDate = new Date();
     const Correcetions = req.body.Corrections;
-    const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+    const CheckerEmail = req.params.CheckerEmail;
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      timeZone: "Asia/Kolkata",
+    };
     const dateString = currentDate.toLocaleDateString("en-US", options);
     console.log(dateString);
     const timezoneOffsetInMs = new Date().getTimezoneOffset() * 60 * 1000; // Convert to milliseconds
@@ -658,10 +682,12 @@ const approvalbyChecker = asyncHandler(async (req, res) => {
           checkerSentBoolean: true,
           Corrections: Correcetions,
           approvalDateFinal: approvalDate,
+
           // DateFirstSubmission: dateString,
           // "myClientsArray.$[elem].FirstSubmission": dateString,
           "myClientsArray.$[elem].approvalDate": approvalDate,
           "myClientsArray.$[elem].completion": "Completed",
+          "myClientsArray.$[elem].CheckerEmail": CheckerEmail,
         },
       },
       {

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d1ff619d.css",
-    "main.js": "/static/js/main.e83bf3dd.js",
+    "main.css": "/static/css/main.c81cf27b.css",
+    "main.js": "/static/js/main.84b30933.js",
     "static/js/787.4e364172.chunk.js": "/static/js/787.4e364172.chunk.js",
     "static/media/done.mp4": "/static/media/done.64299b07b696ed21a893.mp4",
     "static/media/s6-img1.jpg": "/static/media/s6-img1.896a7e9c9169b95db6cc.jpg",
@@ -53,6 +53,7 @@
     "static/media/isb.png": "/static/media/isb.d670d01e65dfc8ed613d.png",
     "static/media/internlogin2.jpg": "/static/media/internlogin2.0236a97d80473ddf881d.jpg",
     "static/media/s7-img3.jpg": "/static/media/s7-img3.67c4a78ac6911fd08297.jpg",
+    "static/media/noresult.jpeg": "/static/media/noresult.e2ee49e3216206ea2c29.jpeg",
     "static/media/if1.png": "/static/media/if1.b55d5fe18e2551c609fd.png",
     "static/media/if3.png": "/static/media/if3.70feff8d0f2d7f7ebd2e.png",
     "static/media/adminsignup.jpg": "/static/media/adminsignup.bb05fd57bf0dfbcb7ec4.jpg",
@@ -75,12 +76,12 @@
     "static/media/facebook.svg": "/static/media/facebook.ef824524d63a006c5931918fd6a1cd47.svg",
     "static/media/linkdin.svg": "/static/media/linkdin.ada11cda991129bc91b79d2c7cee1066.svg",
     "static/media/clock.svg": "/static/media/clock.89b11a43e2f28131861723252e4aee71.svg",
-    "main.d1ff619d.css.map": "/static/css/main.d1ff619d.css.map",
-    "main.e83bf3dd.js.map": "/static/js/main.e83bf3dd.js.map",
+    "main.c81cf27b.css.map": "/static/css/main.c81cf27b.css.map",
+    "main.84b30933.js.map": "/static/js/main.84b30933.js.map",
     "787.4e364172.chunk.js.map": "/static/js/787.4e364172.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1ff619d.css",
-    "static/js/main.e83bf3dd.js"
+    "static/css/main.c81cf27b.css",
+    "static/js/main.84b30933.js"
   ]
 }

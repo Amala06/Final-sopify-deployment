@@ -2,7 +2,7 @@ import { FormControl } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
 import { Box, Spacer, Text } from "@chakra-ui/layout";
 import "../sttyles.css";
-import { IconButton, Spinner, useToast } from "@chakra-ui/react";
+import { IconButton, Progress, Spinner, useToast } from "@chakra-ui/react";
 import { getSender, getSenderFull } from "../../config/ChatLogics";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
@@ -15,6 +15,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import animationData from "../../animation/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./UpdateGroupChat";
+// import Spinner from "react-bootstrap/Spinner";
 // import { calcLength } from "framer-motion";
 // const ENDPOINT = "http://localhost:8080";
 const ENDPOINT = "";
@@ -31,6 +32,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [typing, setTyping] = useState(false);
   const [istyping, setIsTyping] = useState(false);
   const [pdf, setPdf] = useState("");
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [progress, setProgress] = useState(false);
   const toast = useToast();
   const fileRef = useRef();
   // import Lottie from 'react-lottie'
@@ -147,6 +150,27 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       // socket.emit("upload", selectedChat._id);
       socket.emit("upload", { data });
     };
+    setShowSpinner(true);
+    toast({
+      title: "Loading...",
+      status: "info",
+      duration: 3000,
+      isClosable: true,
+      // render: () => (
+      //   <Spinner size="lg" color="blue.500" thickness="4px" speed="0.65s" />
+      // ),
+    });
+    <Progress size="xs" isIndeterminate />;
+    setTimeout(() => {
+      setShowSpinner(false);
+      // setProgress(true);
+      setProgress(true);
+    }, 5000);
+
+    // setTimeout(() => {
+    //   setProgress(false);
+    // }, 100000);
+
     console.log(e.target.files[0]);
   };
 
@@ -253,6 +277,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     }, timerLength);
   };
 
+  // useEffect(() => {
+  //   // Hide the spinner after 5 seconds
+  //   const timer = setTimeout(() => {
+  //     setShowSpinner(false);
+  //   }, 15000);
+
+  //   return () => clearTimeout(timer);
+  // }, [pdf]);
+
   return (
     <>
       {selectedChat ? (
@@ -348,6 +381,17 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                   onChange={typingHandler}
                 ></Input>
               )}
+
+              {showSpinner && (
+                <Spinner
+                  size="xl"
+                  color="blue.500"
+                  thickness="4px"
+                  speed="0.65s"
+                />
+              )}
+              {progress && <Progress size="xs" isIndeterminate />}
+              <br />
               <input type="file" onChange={fileSelected} ref={fileRef} />
             </FormControl>
             {/* <div>

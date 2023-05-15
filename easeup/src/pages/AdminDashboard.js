@@ -63,6 +63,8 @@ const AdminDashboard = () => {
   const [amountpaid, setAmountpaid] = useState(false);
   const [deletion, setDelete] = useState(false);
   const [monthnew, setMonthNew] = useState(3);
+  const [selectedMonth, setSelectedMonth] = useState("");
+
   const [show, setShow] = useState(false);
   const toast = useToast();
   const userInfoString = localStorage.getItem("userInfo");
@@ -171,6 +173,8 @@ const AdminDashboard = () => {
     { number: 7, name: "August" },
     { number: 8, name: "September" },
     { number: 9, name: "October" },
+    { number: 10, name: "November" },
+    { number: 11, name: "December" },
   ];
 
   const fetchItem = async () => {
@@ -259,6 +263,31 @@ const AdminDashboard = () => {
       );
       console.log(response.data);
       setMonthNew(response.data);
+      if (news === 0) {
+        setSelectedMonth("January");
+      } else if (news === 1) {
+        setSelectedMonth("February");
+      } else if (news === 2) {
+        setSelectedMonth("March");
+      } else if (news === 3) {
+        setSelectedMonth("April");
+      } else if (news === 4) {
+        setSelectedMonth("May");
+      } else if (news === 5) {
+        setSelectedMonth("June");
+      } else if (news === 6) {
+        setSelectedMonth("July");
+      } else if (news === 7) {
+        setSelectedMonth("August");
+      } else if (news === 8) {
+        setSelectedMonth("September");
+      } else if (news === 9) {
+        setSelectedMonth("October");
+      } else if (news === 10) {
+        setSelectedMonth("November");
+      } else if (news === 11) {
+        setSelectedMonth("December");
+      }
       return response.data;
     } catch (error) {
       console.error(error);
@@ -452,13 +481,13 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
-      Month based Revenue:{monthnew}
-      <RadioGroup
+      {/* Month based Revenue:{monthnew} */}
+      {/* <RadioGroup
         onChange={setValue}
         value={value}
         style={{ marginLeft: "5rem", marginTop: "3rem", marginRight: "5rem" }}
-      >
-        <Stack direction="row">
+      > */}
+      {/* <Stack direction="row">
           {monthNames.map((data) => {
             return (
               <>
@@ -468,22 +497,37 @@ const AdminDashboard = () => {
               </>
             );
           })}
-        </Stack>
+        </Stack> */}
+      {/* /////////////////////////// */}
+      {/* ///////////////////////////////////// */}
+      <br />
+      <div style={{ marginLeft: "50px" }}>
+        Revenue from the existing database: {monthRevenue}
         <br />
-        Revenue: {monthRevenue}
         <br />
-        current year Revenue :{money}
-      </RadioGroup>
+        CURRENT YEAR REVENUE :{money}
+        <br />
+        <br />
+        MONTH BASED REVENUE ({selectedMonth}) :&nbsp;{monthnew}
+      </div>
+      {/* </RadioGroup> */}
       <RadioGroup
         onChange={setNews}
         value={news}
         style={{ marginLeft: "5rem", marginTop: "3rem", marginRight: "5rem" }}
       >
+        {console.log("news", news)}
         <Stack direction="row">
           {month.map((data) => {
             return (
               <>
-                <Radio value={data.number} onClick={getTotalRevenuePerMonth}>
+                <Radio
+                  key={data.number}
+                  onChange={(e) => setNews(data.number)}
+                  value={data.number}
+                  colorScheme="green"
+                  onClick={getTotalRevenuePerMonth}
+                >
                   {data.name}
                 </Radio>
               </>

@@ -311,6 +311,7 @@ const authChecker = asyncHandler(async (req, res) => {
       isIntern: user.isIntern,
       status: user.status,
       isAdmin: user.isAdmin,
+      isChecker: user.isChecker,
       token: generateToken(user._id),
     });
   } else {
@@ -322,17 +323,26 @@ const authChecker = asyncHandler(async (req, res) => {
 const registerListener = asyncHandler(async (req, res) => {
   console.log("checking files");
   console.log(req.files);
+
   const resume =
-    req.files && req.files.resume.length > 0
+    req.files && req.files.resume && req.files.resume.length > 0
       ? req.files.resume[0].originalname
       : null;
   const file =
-    req.files && req.files.file.length > 0
+    req.files && req.files.file && req.files.file.length > 0
       ? req.files.file[0].originalname
       : null;
 
-  const resumePath = req.files.resume[0].path;
-  const filePath = req.files.file[0].path;
+  // const resumePath = req.files.resume[0].path;
+  // const filePath = req.files.file[0].path;
+
+  const resumePath =
+    req.files.resume && req.files.resume.length > 0
+      ? req.files.resume[0].path
+      : null;
+  const filePath =
+    req.files.file && req.files.file.length > 0 ? req.files.file[0].path : null;
+
   console.log({ resume, file, files: req.files });
 
   const {

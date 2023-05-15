@@ -68,9 +68,11 @@ const Navbarlogout = () => {
                 </div>
               </div>
             </li>
-            <NavLink className="Navlink" to="/blog">
+            
+            {/* <NavLink className="Navlink" to="/blog">
               <li className="navbar-li">BLOGS</li>
-            </NavLink>
+            </NavLink> */}
+
             <NavLink className="Navlink" to="/aboutus">
               <li className="navbar-li">ABOUT US</li>
             </NavLink>
@@ -79,6 +81,10 @@ const Navbarlogout = () => {
             </NavLink>
             <NavLink className="Navlink" to="/ListenerChat">
               <li className="navbar-li">CHAT</li>
+            </NavLink>
+
+            <NavLink className="Navlink" to="/payment">
+              <li className="navbar-li">STATUS</li>
             </NavLink>
 
             <NavLink className="Navlink" to="/listenerlogin" onClick={Logout}>
@@ -130,6 +136,16 @@ const Navbarlogout = () => {
                 <li className="R_navs-list">
                   <a href="/contactus">About Us</a>
                 </li>
+                <li className="R_navs-list">
+                  <a href="/payment">Status</a>
+                </li>
+
+                <li className="R_navs-list">
+                  <a href="/listenerlogin" onClick={Logout}>
+                    Log Out
+                  </a>
+                </li>
+                {/* </NavLink> */}
               </ul>
             </Offcanvas.Body>
           </Offcanvas>

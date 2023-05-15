@@ -172,6 +172,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllClientsadmin from "./pages/AllClientsadmin";
 import AdminRoute from "./AdminRoute";
 import InternRoute from "./InternRoute";
+import CheckerRoute from "./CheckerRoute";
 
 // import Register from "./config/Register";
 function App() {
@@ -253,8 +254,8 @@ function App() {
 
         <Route element={<PrivateRoute />}>
           {/* Put all the auth'd routes here */}
-          <Route path="/Checkertable" element={<CheckerDashboard />} />
-          <Route path="/CheckerDashboard" element={<CheckerMainboard />} />
+          {/* <Route path="/Checkertable" element={<CheckerDashboard />} /> */}
+          {/* <Route path="/CheckerDashboard" element={<CheckerMainboard />} /> */}
           <Route path="/payment" element={<Payment />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/ListenerChat" element={<ListenerChat />} />
@@ -274,6 +275,11 @@ function App() {
           <Route path="/particularClient" element={<ParticularClient />} />
           <Route path="/approvalstatus" element={<ApprovalStatus />} />
         </Route> */}
+
+        <Route element={<CheckerRoute />}>
+          <Route path="/Checkertable" element={<CheckerDashboard />} />
+          <Route path="/CheckerDashboard" element={<CheckerMainboard />} />
+        </Route>
 
         <Route element={<AdminRoute />}>
           <Route path="/admindashboard" element={<AdminDashboard />} />

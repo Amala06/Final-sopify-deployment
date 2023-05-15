@@ -2,7 +2,7 @@ import { Box, Button, Stack, Text, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ChatState } from "../../context/ChatProvider";
-import './MyChats.css'
+import "./MyChats.css";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import ChatLoading from "./ChatLoading";
 import { getSender } from "../../config/ChatLogics";
@@ -40,7 +40,7 @@ const MyChats = ({ fetchAgain }) => {
 
   return (
     <>
-    {/* <div className="myChats_mainDiv"> */}
+      {/* <div className="myChats_mainDiv"> */}
       <Box
         display={{ base: selectedChat ? "none" : "flex", md: "flex" }}
         flexDir="column"

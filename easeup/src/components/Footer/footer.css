@@ -260,9 +260,13 @@
     .svg{
         height: 20px;
     }
+    
 }
 @media screen and (max-width: 350px){
     .footer-grid{
         margin-left: 40px;
     }
+        .svg {
+            height: 12px;
+        }
 }

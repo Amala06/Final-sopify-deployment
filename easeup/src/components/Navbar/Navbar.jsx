@@ -230,7 +230,7 @@ const Navbar = () => {
                   <a href="/contactus">About Us</a>
                 </li>
                 <li className="R_navs-list">
-                  <a href="/login">Login In/Sign Up</a>
+                  <a href="/RegisterUser">Login In/Sign Up</a>
                 </li>
               </ul>
             </Offcanvas.Body>

@@ -85,7 +85,7 @@ const CheckerLogin = () => {
       <Navigation />
       <Container>
         <Row>
-          <Col md={5} style={{ height: "92vh" ,marginBottom:"20px"}}>
+          <Col md={5} style={{ height: "92vh", marginBottom: "20px" }}>
             <img src={img} style={{ width: "100%", height: "100%" }} />
           </Col>
           <Col
@@ -118,7 +118,7 @@ const CheckerLogin = () => {
                   value={password}
                 />{" "}
                 <button
-                className="showButton"
+                  className="showButton"
                   style={{
                     height: "27px",
                     background: "#efefef",
@@ -138,14 +138,14 @@ const CheckerLogin = () => {
                 {/* {email? " Logging You in...":" Login "} */}
                 Login
               </Button>
-              <div className="py-4">
+              {/* <div className="py-4">
                 <p className="text-center">
                   Don't have an account ?{" "}
                   <Link to="/SignUpChecker">
                     <u style={{ color: "blue" }}> Signup</u>
                   </Link>
                 </p>
-              </div>
+              </div> */}
             </Form>{" "}
           </Col>
         </Row>

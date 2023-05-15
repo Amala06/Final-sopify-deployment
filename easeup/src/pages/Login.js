@@ -130,14 +130,14 @@ const Login = () => {
                 {/* {email? " Logging You in...":" Login "} */}
                 Login
               </Button>
-              <div className="py-4">
+              {/* <div className="py-4">
                 <p className="text-center">
                   Don't have an account ?{" "}
                   <Link to="/signup">
                     <u style={{ color: "blue" }}> Signup</u>
                   </Link>
                 </p>
-              </div>
+              </div> */}
             </Form>{" "}
           </Col>
         </Row>

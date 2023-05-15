@@ -10,7 +10,7 @@ const InternRoute = ({ element: Component, ...rest }) => {
   console.log(isAuthenticated);
   console.log({ isAuthenticated });
 
-  return isAuthenticated ? <Navigate to="/login" replace /> : <Outlet />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default InternRoute;

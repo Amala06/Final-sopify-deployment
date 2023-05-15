@@ -152,11 +152,32 @@ const Footer = () => {
           <div className="col5-mainContainer">
             <p className="col5-text">© Copyright 2022 SOPify.</p>
             <div className="col5-logoContainer">
-              <img className="svg" src={svg1} alt="" srcset="" />
-              <img className="svg" src={svg2} alt="" srcset="" />
-              <img className="svg" src={svg3} alt="" srcset="" />
-              <img className="svg" src={svg4} alt="" srcset="" />
-              <img className="svg" src={svg5} alt="" srcset="" />
+              <a href="">
+                {" "}
+                <img className="svg" src={svg1} alt="" srcset="" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/sopify/"
+                target="_blank"
+              >
+                <img className="svg" src={svg2} alt="" srcset="" />
+              </a>
+              <a href="mailto:sopify.studentvisasop@gmail.com" target="_blank">
+                <img className="svg" src={svg3} alt="" srcset="" />
+              </a>
+
+              <a
+                href="https://instagram.com/statement_of_purpose?igshid=NTc4MTIwNjQ2YQ=="
+                target="_blank"
+              >
+                <img className="svg" src={svg4} alt="" srcset="" />
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=917016522535&text=Hello!"
+                target="_blank"
+              >
+                <img className="svg" src={svg5} alt="" srcset="" />
+              </a>
             </div>
           </div>
         </div>

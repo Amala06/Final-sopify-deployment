@@ -129,37 +129,36 @@ const SOP_section2 = () => {
                   Please fill all your information correctly to get an idea
                   about your proper requirement.
                 </div>
-                <div className="SOP_s2-gridDiv2-mainContainer-button">
-                  SOP FORM
-                </div>
+                <a href="/RegisterUser">
+                  <div className="SOP_s2-gridDiv2-mainContainer-button">
+                    SOP FORM
+                  </div>
+                </a>
               </div>
             </div>
-            <NavLink className="Navlink" to='/lor'>
-
-            <div className="SOP_s2-gridDiv2-mainContainer-mainButton2">
-              LOR: Letter of Recommendation
-              <span class="material-symbols-outlined arrow-symbol-LOR">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/lor">
+              <div className="SOP_s2-gridDiv2-mainContainer-mainButton2">
+                LOR: Letter of Recommendation
+                <span class="material-symbols-outlined arrow-symbol-LOR">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
-            <NavLink className="Navlink" to='/assignment'>
-
-            <div className="SOP_s2-gridDiv2-mainContainer-mainButton2">
-              Assignment
-              <span class="material-symbols-outlined arrow-symbol-LOR2">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/assignment">
+              <div className="SOP_s2-gridDiv2-mainContainer-mainButton2">
+                Assignment
+                <span class="material-symbols-outlined arrow-symbol-LOR2">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
-            <NavLink className="Navlink" to='/sop'>
-
-            <div className="SOP_s2-gridDiv2-mainContainer-mainButton">
-              SOP: Statement of Purpose
-              <span class="material-symbols-outlined arrow-symbol-LOR2">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/sop">
+              <div className="SOP_s2-gridDiv2-mainContainer-mainButton">
+                SOP: Statement of Purpose
+                <span class="material-symbols-outlined arrow-symbol-LOR2">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
             {/* <div className="SOP_s2-gridDiv2-mainContainer-mainDiv2">
               <div className="SOP_s2-gridDiv2-mainContainer-mainDiv2-imgDiv">

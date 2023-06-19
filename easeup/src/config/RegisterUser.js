@@ -186,7 +186,7 @@ export default function RegisterListener() {
     formdata.append("college", college);
     formdata.append("course", course);
     formdata.append("city", city);
-    formdata.append("age", age);
+    // formdata.append("age", age);
     formdata.append("tenth", tenth);
     formdata.append("twelth", twelth);
     formdata.append("bachelor", bachelor);
@@ -314,6 +314,12 @@ export default function RegisterListener() {
                   us with the necessary information so we can better serve you.
                   We appreciate your time."
                 </Text>
+                <Text color={"gray.800"} fontSize={{ base: "sm", sm: "md" }}>
+                  Already have account?{" "}
+                  <Link to="/listenerlogin">
+                    <u style={{ color: "blue" }}>Log In</u>{" "}
+                  </Link>{" "}
+                </Text>
               </Stack>
               <Box as={"form"} mt={10}>
                 <Stack spacing={4}>
@@ -391,7 +397,7 @@ export default function RegisterListener() {
                       color: "gray.500",
                     }}
                   /> */}
-                  <Input
+                  {/* <Input
                     onChange={(e) => {
                       setAge(e.target.value);
                       localStorage.setItem("age", e.target.value);
@@ -404,7 +410,7 @@ export default function RegisterListener() {
                     _placeholder={{
                       color: "gray.500",
                     }}
-                  />
+                  /> */}
                   <Input
                     onChange={(e) => {
                       setCity(e.target.value);
@@ -953,12 +959,6 @@ export default function RegisterListener() {
                 >
                   Submit
                 </Button>
-                <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-                  Already have account?{" "}
-                  <Link to="/listenerlogin">
-                    <u style={{ color: "blue" }}>Log In</u>{" "}
-                  </Link>{" "}
-                </Text>
               </Box>
               form
             </Stack>

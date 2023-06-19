@@ -544,14 +544,15 @@ const AdminDashboard = () => {
         sheet="tablexls"
         buttonText="Download as XLS"
       />
-      <Table striped id="table-to-xls">
+      <Table  id="table-to-xls">
         <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
             <th>Price</th>
             <th>Update Price</th>
-            <th>Is Amount Paid</th>
+            <th style={{width:"10rem"}}>Is Amount Paid</th>
+            <th>Work Status</th>
             {/* <th>Age</th> */}
             {/* <th>City</th>
           <th>Marks in 10th</th>
@@ -827,7 +828,28 @@ const AdminDashboard = () => {
                       )}
                       {data.IsAmountpaid}
                     </td>
-
+                    <td>
+                      {" "}
+                      {data.flag ? (
+                        <>
+                          <Button
+                            variant="success"
+                            style={{ height: "2rem", fontSize: "13px" }}
+                          >
+                            Done
+                          </Button>
+                        </>
+                      ) : (
+                        <>
+                          <Button
+                            variant="info"
+                            style={{ height: "2rem", fontSize: "13px" }}
+                          >
+                            Pending
+                          </Button>
+                        </>
+                      )}
+                    </td>
                     <td>{data.selectedValues}</td>
                     <td>
                       <form onSubmit={sendEmail}>

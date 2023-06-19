@@ -28,8 +28,13 @@ const footer2 = () => {
               desire.
             </p>
             <div className="footer2-buttonContainer">
-              <button className="footer2-button">READ MORE</button>
+              <NavLink className="Navlink2" to="/aboutus">
+                <button className="footer-button">READ MORE</button>
+              </NavLink>
             </div>
+            <a href="/RegisterUser">
+              <div className="footer_portal">Visit our Portal</div>
+            </a>
           </div>
           <div className="footer2-col2">
             <h3 className="col2Heading">Quick Links</h3>

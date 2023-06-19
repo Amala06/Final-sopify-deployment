@@ -12,9 +12,7 @@ const Assignment_section2 = () => {
             <div className="Assignment_s2-gridDiv1-imgDiv">
               <img className="Assignment_s2-gridDiv1-img" src={img1} alt="" />
             </div>
-            <div className="Assignment_s2-gridDiv1-Head">
-              Assignment
-            </div>
+            <div className="Assignment_s2-gridDiv1-Head">Assignment</div>
             <div className="Assignment_s2-gridDiv1-Text">
               We offer supreme quality assignments to complete your application
               process. The assignments are done in various subjects. The
@@ -120,35 +118,36 @@ const Assignment_section2 = () => {
                   Please fill all your information correctly to get an idea
                   about your proper requirement.
                 </div>
-                <div className="Assignment_s2-gridDiv2-mainContainer-button">
-                  Assignment Form
-                </div>
+                <a href="/RegisterUser">
+                  <div className="Assignment_s2-gridDiv2-mainContainer-button">
+                    Assignment Form
+                  </div>
+                </a>
               </div>
             </div>
-            <NavLink className="Navlink" to='/lor'>
-
-            <div className="Assignment_s2-gridDiv2-mainContainer-mainButton2">
-              LOR: Letter of Recommendation
-              <span class="material-symbols-outlined arrow-symbol-LOR">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/lor">
+              <div className="Assignment_s2-gridDiv2-mainContainer-mainButton2">
+                LOR: Letter of Recommendation
+                <span class="material-symbols-outlined arrow-symbol-LOR">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
-            <NavLink className="Navlink" to='/assignment'>
-            <div className="Assignment_s2-gridDiv2-mainContainer-mainButton">
-              Assignment
-              <span class="material-symbols-outlined arrow-symbol-LOR2">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/assignment">
+              <div className="Assignment_s2-gridDiv2-mainContainer-mainButton">
+                Assignment
+                <span class="material-symbols-outlined arrow-symbol-LOR2">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
-            <NavLink className="Navlink" to='/sop'>
-            <div className="Assignment_s2-gridDiv2-mainContainer-mainButton2">
-              SOP: Statement of Purpose
-              <span class="material-symbols-outlined arrow-symbol-LOR2">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/sop">
+              <div className="Assignment_s2-gridDiv2-mainContainer-mainButton2">
+                SOP: Statement of Purpose
+                <span class="material-symbols-outlined arrow-symbol-LOR2">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
 
             {/* <div className="Assignment_s2-gridDiv2-mainContainer-mainDiv2">

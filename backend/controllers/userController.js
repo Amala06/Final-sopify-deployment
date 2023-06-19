@@ -351,7 +351,7 @@ const registerListener = asyncHandler(async (req, res) => {
     password,
     college,
     course,
-    age,
+    
     work,
     city,
     tenth,
@@ -450,7 +450,7 @@ const registerListener = asyncHandler(async (req, res) => {
     phone,
     course,
     college,
-    age,
+    
     tenth,
     city,
     twelth,
@@ -482,7 +482,7 @@ const registerListener = asyncHandler(async (req, res) => {
       phone: listener.phone,
       course: listener.course,
       college: listener.college,
-      age: listener.age,
+    
       tenth: listener.tenth,
       city: listener.city,
       twelth: listener.twelth,
@@ -527,6 +527,7 @@ const registerListener = asyncHandler(async (req, res) => {
 const sentToChecker = asyncHandler(async (req, res) => {
   try {
     const email = req.params.email;
+    const name = req.params.name;
     const Clientemail = req.params.clientEmail;
 
     console.log("client in backend line 393 UserController", Clientemail);
@@ -541,6 +542,8 @@ const sentToChecker = asyncHandler(async (req, res) => {
           checkerSent: true,
           clientEmail: Clientemail,
           approval: "null",
+          "myClientsArray.$[elem].emailofintern": email,
+          "myClientsArray.$[elem].nameofintern": name,
           "myClientsArray.$[elem].duration": "Calculating",
         },
       },
@@ -872,6 +875,7 @@ const sendProjecttoClient = asyncHandler(async (req, res) => {
         $set: {
           project: projectPath,
           projectPath: projectPath,
+          flag: true,
           approval: "null",
           clientSideDisplay: "send",
         },
@@ -1230,8 +1234,38 @@ const DeleteUser = asyncHandler(async (req, res) => {
     res.status(500).send("Error deleting user");
   }
 });
+const processSubArrays = asyncHandler(async (req, res) => {
+  try {
+    const documents = await User.find({ isIntern: true }).exec();
+    // const documents = await User.find({ isIntern: true }).exec();
+
+    let combinedArray = [];
+    for (const document of documents) {
+      const mainArray = document.myClientsArray;
+
+      let tempArray = [];
+
+      for (const subArray of mainArray) {
+        tempArray = tempArray.concat(subArray);
+      }
+
+      combinedArray = combinedArray.concat(tempArray);
+
+      // document.combinedArray = tempArray;
+      // await document.save();
+    }
+
+    // document.combinedArray = combinedArray;
+    // await document.save();
+
+    res.json(combinedArray);
+  } catch (error) {
+    throw error;
+  }
+});
 
 module.exports = {
+  processSubArrays,
   registerUser,
   authUser,
   registerListener,

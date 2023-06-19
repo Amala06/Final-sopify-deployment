@@ -183,6 +183,10 @@ const UserSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    flag: {
+      type: Boolean,
+      default: false,
+    },
     myClientsArray: [
       {
         email: String,
@@ -208,6 +212,12 @@ const UserSchema = mongoose.Schema(
         revision: {
           type: Number,
           default: -1,
+        },
+        emailofintern: {
+          type: String,
+        },
+        nameofintern: {
+          type: String,
         },
       },
     ],

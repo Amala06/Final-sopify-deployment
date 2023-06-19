@@ -43,12 +43,14 @@ const Cu_Section2 = () => {
                   alt=""
                 />
               </div>
-              <div className="CU_section2_gridContainer-innerDiv-textContainer">
-                <div className="CU_section2-innerDiv-text1">Mail Us:</div>
-                <div className="CU_section2-innerDiv-text2">
-                  info@studentvisasop.com
+              <a href="mailto:info@studentvisasop.com">
+                <div className="CU_section2_gridContainer-innerDiv-textContainer">
+                  <div className="CU_section2-innerDiv-text1">Mail Us:</div>
+                  <div className="CU_section2-innerDiv-text2">
+                    info@studentvisasop.com
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
             <div
               className="CU_section2_gridContainer-innerDiv "
@@ -81,7 +83,7 @@ const Cu_Section2 = () => {
                 password so that we may start working on your project.
               </div>
               <div className="CU_section2_gridContainer-div2-button-container">
-                <Link to="/login">
+                <Link to="/RegisterUser">
                   <div className="CU_section2_gridContainer-div2-button">
                     Portal
                   </div>

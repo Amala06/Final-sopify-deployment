@@ -10,6 +10,7 @@ import img from "../Images/isb.png";
 import img1 from "../Images/no.png";
 import { Link } from "react-router-dom";
 import "./ParticularClient.css";
+import emailjs from "@emailjs/browser";
 // import { InternNavigation } from "./InternNavigation";
 // import { useToast } from "@chakra-ui/react";
 
@@ -129,7 +130,7 @@ const ParticularClient = () => {
       );
 
       const { dataa } = await axios.put(
-        `/api/user/updateParticularClient/detailsFromClientArray/${emails}/${clientEmail}/`
+        `/api/user/updateParticularClient/detailsFromClientArray/${userInfo.name}/${emails}/${clientEmail}/`
       );
       console.log(dataa);
       toast({
@@ -177,6 +178,10 @@ const ParticularClient = () => {
         position: "bottom",
       });
     }
+
+    
+
+
   };
 
   const Notifyy = async (e) => {
@@ -404,6 +409,33 @@ const ParticularClient = () => {
   // useEffect(() => {
   //   localStorage.setItem("clients", JSON.stringify(clientarray));
   // }, [clientarray]);
+
+   const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_uizbllj",
+        "template_n5479ah",
+        e.target,
+        "sf2MnwCTretSZoHYo"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    toast({
+      title: "Notification sent to client",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom",
+    });
+  };
 
   return (
     <>
@@ -758,6 +790,29 @@ const ParticularClient = () => {
                   onChange={handleFileChange}
                   accept="application/pdf"
                 ></Input>
+                <form onSubmit={sendEmail}>
+                  <input
+                    type="fromemail"
+                    name="fromemail"
+                    value={internItem.email}
+                    style={{ display: "none" }}
+                  />
+                  {/* <input
+                    type="name"
+                    name="name"
+                    value={data.name}
+                    style={{ display: "none" }}
+                  /> */}
+                  <input
+                    type="intern_name"
+                    name="intern_name"
+                    value={internItem.name}
+                    style={{ display: "none" }}
+                  />
+
+                  {console.log(internItem.email)}
+                  <input type="submit" value="Notify the client " />
+                </form>
                 {/* <button onClick={handleUpload}>upload</button> */}
                 {/* </Button> */}
               </div>

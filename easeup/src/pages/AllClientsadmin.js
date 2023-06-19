@@ -266,7 +266,8 @@ function AllClientsadmin() {
 
   const getapi = async () => {
     try {
-      const res = await axios.get(`/api/user/onlyuser`);
+      const res =
+        await axios.get("/api/user/Allunpaidclients/foradmin/mainlist");
       setFilterData(res.data);
       console.log("updated state data");
     } catch (error) {
@@ -309,7 +310,7 @@ function AllClientsadmin() {
     <>
       {/* {userInfo.name} */}
       <AdminNav />
-      <Table className="ClientDetailsTable" striped>
+      <Table className="ClientDetailsTable" >
         <thead>
           <tr>
             <th>Name</th>
@@ -338,6 +339,7 @@ function AllClientsadmin() {
           <th>Phone Number</th>
           <th>Heard About us</th> */}
             {/* <th>Selected Additional Services</th> */}
+            <th>Work Status</th>
             <th>More Details</th>
             <th>Seleted</th>
           </tr>
@@ -391,6 +393,29 @@ function AllClientsadmin() {
                 <td>{data.twelth}</td>
                 <td>{data.bachelor}</td> */}
                     <td>{data.specialization}</td>
+                    <td>
+                      {" "}
+                      {data.flag ? (
+                        <>
+                          <Button
+                            variant="success"
+                            style={{ height: "2rem", fontSize: "13px" }}
+                          >
+                            Done
+                          </Button>
+                        </>
+                      ) : (
+                        <>
+                          <Button
+                            variant="danger"
+                            style={{ height: "2rem", fontSize: "13px" }}
+                          >
+                            Pending
+                          </Button>
+                        </>
+                      )}
+                    </td>
+                    {/* <td>{data.flag}</td> */}
                     {/* <td>{data.internship}</td>
                 <td>{data.social}</td>
                 <td>{data.extra}</td>

@@ -50,6 +50,7 @@ const {
   downloadProject,
 
   DeleteUser,
+  processSubArrays,
 } = require("../controllers/userController");
 // ../Controllers/UserController"
 // const pdf = require("./pdfModel");
@@ -130,7 +131,7 @@ router.put(
 );
 
 router.put(
-  "/updateParticularClient/detailsFromClientArray/:email/:clientEmail",
+  "/updateParticularClient/detailsFromClientArray/:name/:email/:clientEmail",
   sentToChecker
 );
 router.put("/Marked/by/the/checker/:email/:clientEmail/:CheckerEmail", Marked);
@@ -152,5 +153,6 @@ router.get(
 router.get("/TotalRevenueCurrentYear/:email", TotalRevenueCurrentYear);
 router.get("/TotalRevenuePERYear/:email", TotalRevenuePERYear);
 router.delete("/deletetheuser/:email", DeleteUser);
+router.get("/subarray/of/interns", processSubArrays);
 
 module.exports = router;

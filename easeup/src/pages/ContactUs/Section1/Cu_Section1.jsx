@@ -7,7 +7,7 @@ const Cu_Section1 = () => {
       <div className="CU_section1_mainContainer">
         <div className="CU_section1_textContainer">
           <h1 className="CU_section1_textContainer-Text1">Contact Us</h1>
-          <div className="CU_section1_textContainer-Text2">
+          {/* <div className="CU_section1_textContainer-Text2">
             <p>Sopify&nbsp;&nbsp;&nbsp;</p>
             <p
               style={{
@@ -19,7 +19,7 @@ const Cu_Section1 = () => {
               /&nbsp;&nbsp;&nbsp;
             </p>
             <p>Contact Us</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

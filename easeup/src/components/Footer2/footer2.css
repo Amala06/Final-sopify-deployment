@@ -88,7 +88,7 @@
     width: 20px;
     height: 20px;
     margin-right: 6px;
-    margin-top: 6px;
+    margin-top: -3px;
 }
 .col2-valeContainerText:hover{
     color: rgb(18, 115, 235) ;

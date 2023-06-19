@@ -27,6 +27,7 @@ import { ChatState } from "../context/ChatProvider";
 import UserListItem from "../components/UserAvatar/UserListItem";
 import UserBadgeItem from "../components/UserAvatar/UserBadgeItem";
 import AdminNav from "./AdminNav";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 function InternList() {
   const userInfoString = localStorage.getItem("userInfo");
   // console.log(userInfoString);
@@ -294,6 +295,18 @@ function InternList() {
       console.log(error.message);
     }
   };
+  const [subArray, setSubArray] = useState([]);
+
+  const getSubArray = async () => {
+    try {
+      const res = await axios.get(`/api/user/subarray/of/interns`);
+      setSubArray(res.data);
+      console.log(subArray);
+    } catch (error) {
+      console.log(error.message);
+    }
+    setClose(true);
+  };
 
   const handleGroup = (userToAdd) => {
     console.log("userToAdd", userToAdd);
@@ -326,16 +339,104 @@ function InternList() {
   // console.log(clientData);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+const[close,setClose]=useState(true);
   return (
     <>
       <AdminNav />
+      {/* <Button onClick={getSubArray}> Generate compressed Record</Button> */}
+
+      {close ? (
+        <div>
+          <ReactHTMLTableToExcel
+            id="test-table-xls-button"
+            className="download-table-xls-button"
+            table="internList"
+            filename="tablexls"
+            sheet="tablexls"
+            buttonText="Download as XLS"
+          />
+          <Button
+            onClick={() => setClose(false)}
+            variant="danger"
+            style={{
+              margin: "2% 2%",
+            }}
+          >
+            close
+          </Button>
+          <Table striped id="internList">
+            <thead>
+              <tr>
+                <th>Name of Intern</th>
+                <th>Email of Intern</th>
+                <th>Revisions</th>
+                <th> Date of First Submission</th>
+                <th> Date of Approval</th>
+                <th> Duration</th>
+                <th> Status of Work </th>
+                <th> Approved by Checker</th>
+              </tr>
+            </thead>
+            <tbody>
+              <>
+                {subArray.map((data) => {
+                  const {
+                    nameofintern,
+                    emailofintern,
+                    revision,
+                    FirstSubmission,
+                    approvalDate,
+                    duration,
+                    completion,
+                    CheckerEmail,
+                  } = data;
+                  return (
+                    <>
+                      <tr>
+                        <td>{nameofintern}</td>
+                        <td>{emailofintern}</td>
+                        <td>{revision}</td>
+                        <td>
+                          {typeof FirstSubmission === "string"
+                            ? FirstSubmission.slice(0, 10)
+                            : FirstSubmission}
+                        </td>{" "}
+                        <td>
+                          {typeof approvalDate === "string"
+                            ? approvalDate.slice(0, 10)
+                            : approvalDate}
+                        </td>{" "}
+                        <td>{duration}</td>
+                        <td>{completion}</td>
+                        <td>{CheckerEmail}</td>
+                      </tr>
+                    </>
+                  );
+                })}
+              </>
+            </tbody>
+          </Table>
+        </div>
+      ) : (
+        <>
+          {" "}
+          <Button
+            onClick={getSubArray}
+            style={{
+              margin: "2% 2%",
+            }}
+          >
+            {" "}
+            Generate compressed Record
+          </Button>
+        </>
+      )}
       {/* {userInfo.name} */}
       <div style={{ display: "flex", flexWrap: "wrap", height: "100vh" }}>
         {/* style={{ border: "2px solid red" }} */}
         <div
           style={{
-            width: "50%rem",
+            width: "50%",
             height: "10%",
             border: "2px solid black",
             overflow: "scroll",
@@ -632,6 +733,10 @@ function InternList() {
                       No. of Revisions : {data.revision}
                       <br />
                       Status of Work : {data.completion}
+                      <br />
+                      Name of intern : {data.nameofintern}
+                      <br />
+                      Email of intern : {data.emailofintern}
                       <br />
                       Date of First Submission: {data.FirstSubmission}
                       <br />

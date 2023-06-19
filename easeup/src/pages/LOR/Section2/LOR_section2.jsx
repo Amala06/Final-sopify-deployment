@@ -72,17 +72,18 @@ const LOR_section2 = () => {
                   Chose from the below buttons to choose your LOR type Academic
                   or Professional
                 </div>
-                <div className="LOR_s2-gridDiv2-mainContainer-button">
+
+                {/* <div className="LOR_s2-gridDiv2-mainContainer-button">
                   <div className="LOR_s2-gridDiv2-mainContainer-button-span1">
                     Academic
                   </div>
                   <div className="LOR_s2-gridDiv2-mainContainer-button-span2">
                     Professional
-                  </div>
+                  </div> */}
                   {/* <div className="LOR_s2-gridDiv2-mainContainer-button-span3">
                     OR
                   </div> */}
-                </div>
+                {/* </div> */}
               </div>
             </div>
             <NavLink className="Navlink" to='/lor'>

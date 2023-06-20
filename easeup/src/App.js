@@ -173,11 +173,13 @@ import AllClientsadmin from "./pages/AllClientsadmin";
 import AdminRoute from "./AdminRoute";
 import InternRoute from "./InternRoute";
 import CheckerRoute from "./CheckerRoute";
+import BacktoScroll from "./components/BacktoScroll";
 
 // import Register from "./config/Register";
 function App() {
   return (
     <BrowserRouter>
+    <BacktoScroll/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<Payment2 />} />
@@ -212,6 +214,7 @@ function App() {
         <Route path="/blog" element={<Blogs blogs={blogList} />} />
         {/* done */}
         <Route path="/blog/blog/:id" element={<BlogPage />} />
+        {/* <Route path="blog/blog/1" element={<BlogPage/>}/> */}
         {/* done iske andder ka navigation info dekhna h */}
         {/*         
         <Route path="/clientdetails" element={<Clientdetails />} />

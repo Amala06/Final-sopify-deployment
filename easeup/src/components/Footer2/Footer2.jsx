@@ -12,6 +12,9 @@ import svg5 from "../../Images/whatsapp.svg";
 import { NavLink } from "react-router-dom";
 
 const footer2 = () => {
+     const handleClick = () => {
+       window.location.redirect();
+     };
   return (
     <>
       <div className="footer2-mainContaier">
@@ -111,13 +114,21 @@ const footer2 = () => {
             <h3 className="col3-headText">Blogs</h3>
             <div className="col3-container">
               <img className="col3-image" src={img1} alt="" srcset="" />
-              <NavLink className="Navlink" to="/blog/blog/4">
+              <NavLink
+                className="Navlink"
+                to="/blog/blog/4"
+                onClick={handleClick}
+              >
                 <p className="col3-text">How to write a perfect SOP?</p>
               </NavLink>
             </div>
             <div className="col3-container">
               <img className="col3-image" src={img3} alt="" srcset="" />
-              <NavLink className="Navlink footertextcolor" to="/blog/blog/3">
+              <NavLink
+                className="Navlink footertextcolor"
+                to="/blog/blog/3"
+                onClick={handleClick}
+              >
                 <p className="col3-text">
                   Why do students get rejected by Universities?
                 </p>
@@ -125,7 +136,11 @@ const footer2 = () => {
             </div>
             <div className="col3-container">
               <img className="col3-image" src={img2} alt="" srcset="" />
-              <NavLink className="Navlink" to="/blog/blog/2">
+              <NavLink
+                className="Navlink"
+                to="/blog/blog/2"
+                onClick={handleClick}
+              >
                 <p className="col3-text">
                   How and why do students fail to get visas?
                 </p>

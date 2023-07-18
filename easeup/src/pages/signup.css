@@ -1,0 +1,28 @@
+/* For laptops with screen width between 1200px and 1600px */
+@media (min-width: 1200px) and (max-width: 1600px) {
+    #email_button {
+        top: 45%;
+    }
+}
+
+/* For laptops with screen width less than 1200px */
+@media (max-width: 1200px) {
+    #email_button {
+        top: 40%;
+    }
+}
+
+/* For laptops with screen width less than 992px */
+@media (max-width: 992px) {
+    #email_button {
+        top: 35%;
+        left:1%;
+    }
+}
+
+/* For laptops with screen width less than 768px */
+@media (max-width: 768px) {
+    #email_button {
+        top: 30%;
+    }
+}

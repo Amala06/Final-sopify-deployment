@@ -322,7 +322,7 @@ function AllClientsadmin() {
           <th>Marks in 10th</th>
           <th>Marks in 12th</th>
           <th>Marks in Bachelor</th> */}
-            <th>Area of Specialization</th>
+            {/* <th>Area of Specialization</th> */}
             {/* <th>Internship Experience</th>
           <th>Social Service Experience</th>
           <th>Extra Curriculam</th>
@@ -339,9 +339,11 @@ function AllClientsadmin() {
           <th>Phone Number</th>
           <th>Heard About us</th> */}
             {/* <th>Selected Additional Services</th> */}
+            <th>Phone</th>
+            <th>College</th>
             <th>Work Status</th>
             <th>More Details</th>
-            <th>Seleted</th>
+            {/* <th>Seleted</th> */}
           </tr>
         </thead>
         <tbody>
@@ -384,7 +386,7 @@ function AllClientsadmin() {
                     <td>{data.name}</td>
                     <td>{data.email}</td>
 
-                    {/* <td>{data.college}</td> */}
+                    <td>{data.phone}</td>
                     {/* <td>{data.course}</td> */}
 
                     {/* <td>{data.age}</td> 
@@ -392,7 +394,7 @@ function AllClientsadmin() {
                 <td>{data.tenth}</td>
                 <td>{data.twelth}</td>
                 <td>{data.bachelor}</td> */}
-                    <td>{data.specialization}</td>
+                    <td>{data.college}</td>
                     <td>
                       {" "}
                       {data.flag ? (
@@ -525,7 +527,7 @@ function AllClientsadmin() {
                         </Modal.Footer>
                       </Modal>
                     </td>
-                    <td>
+                    {/* <td>
                       <Accordion
                         defaultActiveKey="0"
                         onClick={() => setEmail(data.email)}
@@ -550,11 +552,7 @@ function AllClientsadmin() {
                               Triple click
                             </Button>
                             <Button onClick={handleSubmit}>Chat</Button>
-                            {/* <Input
-                              placeholder="Add Users eg: John, Piyush, Jane"
-                              mb={1}
-                              onChange={(e) => handleSearch(e.target.value)}
-                            /> */}
+                       
                             <Box w="100%" d="flex" flexWrap="wrap">
                               {selectedUsers.map((u) => (
                                 <UserBadgeItem
@@ -564,7 +562,7 @@ function AllClientsadmin() {
                                 />
                               ))}
                               {loading ? (
-                                // <ChatLoading />
+                        
                                 <div>Loading...</div>
                               ) : (
                                 searchResult
@@ -608,7 +606,7 @@ function AllClientsadmin() {
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
-                    </td>
+                    </td> */}
                   </tr>
                   {/* <Card
               direction={{ base: "column", sm: "row" }}

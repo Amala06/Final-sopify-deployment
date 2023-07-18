@@ -339,7 +339,7 @@ function InternList() {
   // console.log(clientData);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-const[close,setClose]=useState(true);
+const[close,setClose]=useState(false);
   return (
     <>
       <AdminNav />

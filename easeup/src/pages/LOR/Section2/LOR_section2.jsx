@@ -17,45 +17,52 @@ const LOR_section2 = () => {
               LOR: Letter Of Recommendation
             </div>
             <div className="LOR_s2-gridDiv1-Text">
-              Letter of Recommendation acts as an aide to your Statement of
-              Purpose. It supports your Statement of Purpose by insights into
-              your performance, projects, and personality. The Letter of
-              Recommendation is signed and validated by your teachers,
-              professors, mentors, and managers. Letter of Recommendation is
-              both for <b>Educational</b> and <b>Professional </b> Professional
-              Reasons. Correct recommendations lead to strengthening your
-              application. The LoR has to correctly state your performance,
-              accomplishments, and strengths in a way that does justice to your
-              actual performance. We draft professional LoRs to highlight your
-              mettle.
+              A Letter of Recommendation serves as a valuable supplement to your
+              Statement of Purpose. It fortifies your application by offering
+              insights into your achievements, projects, and personal
+              attributes. Authenticated by teachers, professors, mentors, or
+              managers, a Letter of Recommendation is applicable for both
+              educational and professional pursuits. A well-crafted LOR
+              effectively showcases your performance, accomplishments, and
+              strengths, accurately reflecting your true capabilities. We
+              specialize in drafting professional LORs that emphasize your
+              unique qualities.
             </div>
             <div className="LOR_s2-gridDiv1-Text">
-              Teachers often are unable to articulate the feats of the student.
-              Also, the sources are not justified at times to validate the
-              content.
+              Occasionally, teachers may struggle to articulate a student's
+              accomplishments; our expertise ensures your achievements are
+              effectively communicated.
             </div>
             <div className="LOR_s2-gridDiv1-head-Text">
-              Educational Letter of Recommendation
+              1. Academic Letter of Recommendation
             </div>
             <div className="LOR_s2-gridDiv1-Text">
-              It is drafted to apply to educational institutions. An Educational
-              LoR involves getting recommendations signed by teachers in school
-              and professors in college. You need to decide which feats would
-              strengthen your application and are worthy to be included in the
-              LoR.
+              An Acedemic Letter of Recommendation (LoR) is a document that
+              highlights a student's academic accomplishments, skills, and
+              personal traits. Written by teachers, professors, or academic
+              mentors, it serves as a testament to the student's capabilities
+              and potential. The Educational LoR is commonly required during
+              university admissions, scholarship applications, or academic
+              program enrollment, and plays a crucial role in strengthening the
+              applicant's profile and increasing their chances of acceptance.
               <br />
-              <b>Rates: ₹1000/- | US$ 15.00</b> View Sample
+              <b>Rates: ₹1000/- | US$ 15.00</b> 
             </div>
             <div className="LOR_s2-gridDiv1-head-Text">
-              Professional Letter of Recommendation
+              2. Professional Letter Of Recommendation
             </div>
             <div className="LOR_s2-gridDiv1-Text">
-              A professional LoR is drafted to gain a better position in your
-              professional tenure or shift jobs. It involves highlighting
-              achievements that do justice to the job profile that you are
-              applying to.
+              A Professional Letter of Recommendation (LoR) is a document that
+              showcases an individual's work-related achievements, skills, and
+              personal qualities. Authored by supervisors, managers, or
+              colleagues, it attests to the individual's professional competence
+              and potential. The Professional LoR is often required during job
+              applications, promotions, admission in foreign Universities or
+              even career development opportunities. It plays a key role in
+              reinforcing the applicant's professional credibility and
+              increasing their likelihood of success.
               <br />
-              <b>Rates: ₹1000/- | US$ 15.00 </b> View Sample
+              <b>Rates: ₹1000/- | US$ 15.00 </b> 
             </div>
           </div>
           <div className="LOR_s2-gridDiv2">
@@ -72,46 +79,44 @@ const LOR_section2 = () => {
                   Chose from the below buttons to choose your LOR type Academic
                   or Professional
                 </div>
-
                 {/* <div className="LOR_s2-gridDiv2-mainContainer-button">
                   <div className="LOR_s2-gridDiv2-mainContainer-button-span1">
                     Academic
                   </div>
                   <div className="LOR_s2-gridDiv2-mainContainer-button-span2">
                     Professional
-                  </div> */}
-                  {/* <div className="LOR_s2-gridDiv2-mainContainer-button-span3">
-                    OR
-                  </div> */}
-                {/* </div> */}
+                  </div>
+                </div> */}
+                {/* <a href="/RegisterUser">
+                  <div className="SOP_s2-gridDiv2-mainContainer-button lor_s2_button">
+                    LOR FORM
+                  </div>
+                </a> */}
               </div>
             </div>
-            <NavLink className="Navlink" to='/lor'>
-
-            <div className="LOR_s2-gridDiv2-mainContainer-mainButton">
-              LOR: Letter of Recommendation
-              <span class="material-symbols-outlined arrow-symbol-LOR">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/lor">
+              <div className="LOR_s2-gridDiv2-mainContainer-mainButton">
+                LOR: Letter of Recommendation
+                <span class="material-symbols-outlined arrow-symbol-LOR">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
-            <NavLink className="Navlink" to='/assignment'>
-
-            <div className="LOR_s2-gridDiv2-mainContainer-mainButton2">
-              Assignment
-              <span class="material-symbols-outlined arrow-symbol-LOR2">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/assignment">
+              <div className="LOR_s2-gridDiv2-mainContainer-mainButton2">
+                Assignment
+                <span class="material-symbols-outlined arrow-symbol-LOR2">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
-            <NavLink className="Navlink" to='/sop'>
-
-            <div className="LOR_s2-gridDiv2-mainContainer-mainButton2">
-              SOP: Statement of Purpose
-              <span class="material-symbols-outlined arrow-symbol-LOR2">
-                chevron_right
-              </span>
-            </div>
+            <NavLink className="Navlink" to="/sop">
+              <div className="LOR_s2-gridDiv2-mainContainer-mainButton2">
+                SOP: Statement of Purpose
+                <span class="material-symbols-outlined arrow-symbol-LOR2">
+                  chevron_right
+                </span>
+              </div>
             </NavLink>
             {/* <div className="LOR_s2-gridDiv2-mainContainer-mainDiv2">
               <div className="LOR_s2-gridDiv2-mainContainer-mainDiv2-imgDiv">

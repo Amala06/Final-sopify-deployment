@@ -183,6 +183,10 @@ const UserSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    explore:{
+type:Boolean,
+default:false,
+    },
     flag: {
       type: Boolean,
       default: false,

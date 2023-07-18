@@ -14,27 +14,22 @@ const Assignment_section2 = () => {
             </div>
             <div className="Assignment_s2-gridDiv1-Head">Assignment</div>
             <div className="Assignment_s2-gridDiv1-Text">
-              We offer supreme quality assignments to complete your application
-              process. The assignments are done in various subjects. The
-              subjects offered and their assignments are thoroughly researched
-              and well planned. The structure of the assignments is taken into
-              consideration as per the requirement of the University. Getting
-              your assignments drafted by us will give you the benefit of prior
-              experience. You can solely work on your applications while we take
-              care of researching and drafting the assignment to fulfill your
-              dream of studying abroad.
+              We provide exceptional quality assignments as per the guidelines
+              across various subjects. Our meticulously researched and
+              thoughtfully planned assignments adhere to the specific reference
+              requirements of each university. By entrusting us with your
+              assignments, you can focus on other best parts of foreign country
+              such as immersing yourself in rich culture and earning the dough.
             </div>
             <div className="Assignment_s2-gridDiv1-Text">
-              Our writers specialize in the subjects given below and more. They
-              ensure top-notch quality of assignments along with 100% authentic
-              information. The writers have expertise in conducting in-depth
-              research on the relevant topic.
-            </div>
-            <div className="Assignment_s2-gridDiv1-Text">
-              Our prior experience gives us an upper edge as we understand the
-              current standards of the assignments to be produced but also
-              understand the quality expected by universities. To name a few, we
-              offer assignments in the following subjects
+              Our skilled writers specialize in a wide range of subjects,
+              ensuring top-notch assignment quality and 100% authentic
+              information. Their proficiency in conducting comprehensive
+              research on relevant topics sets us apart. Our extensive
+              experience equips us with an understanding of the current
+              assignment standards and the high expectations of universities.
+              Among the many subjects we offer assignments in, here are a few
+              examples:
             </div>
             {/* LIST 1 */}
             <div className="Assignment_s2-gridDiv1-listDiv">

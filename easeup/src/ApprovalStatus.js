@@ -53,6 +53,7 @@ const ApprovalStatus = () => {
         setApprove(true);
       }
       console.log("res", res);
+      localStorage.setItem("userInfo", JSON.stringify(res));
     } catch (error) {
       console.log(error);
     }

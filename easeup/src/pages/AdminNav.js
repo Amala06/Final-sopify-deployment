@@ -50,7 +50,7 @@ const AdminNav = () => {
             <NavLink className="Navlink" to="/clientdetailsadmin">
               <li className="navbar-li">All Clients</li>
             </NavLink>
-            <NavLink className="Navlink" to="/chat">
+            <NavLink className="Navlink" to="/adminchat">
               <li className="navbar-li">My Chats</li>
             </NavLink>
             <NavLink className="Navlink" to="/internList">
@@ -58,6 +58,9 @@ const AdminNav = () => {
             </NavLink>
             <NavLink className="Navlink" to="/AllPaidClientList">
               <li className="navbar-li">Paid Client List</li>
+            </NavLink>
+            <NavLink className="Navlink" to="/signup/04a2-4717-a808-58bcb757aee7">
+              <li className="navbar-li">Register New Intern</li>
             </NavLink>
             <NavLink className="Navlink" onClick={Logout}>
               <li className="navbar-li">Logout</li>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Service_section4.css";
 import img1 from "../../../Images/service-s4-img1.jpg";
+import { Link } from "react-router-dom";
 
 const Service_section4 = () => {
   return (
@@ -56,7 +57,10 @@ const Service_section4 = () => {
                 placeholder="Your Message Here"
               ></textarea>
             </div>
-            <div className="Serivce_s4_mainContainer_button">GET STARTED</div>
+            <div className="Serivce_s4_mainContainer_button">
+              {" "}
+              <Link to="/RegisterUser">GET STARTED</Link>
+            </div>
           </div>
         </div>
       </div>

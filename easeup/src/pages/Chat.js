@@ -6,6 +6,8 @@ import SideDrawer from "../components/miscellanous/SideDrawer";
 import MyChats from "../components/miscellanous/MyChats";
 import ChatBox from "../components/miscellanous/ChatBox";
 import "../styles/Chat.css";
+import AdminNav from "./AdminNav";
+import InternNavigation from "./InternNavigation";
 
 const Chat = () => {
   const { user } = ChatState();
@@ -22,6 +24,8 @@ const Chat = () => {
 
   return (
     <div style={{ width: "100%" }}>
+      {/* <AdminNav /> */}
+      <InternNavigation/>
       {user && <SideDrawer />}
 
       <div className="chat_mainDiv">

@@ -381,19 +381,19 @@ const AllPaidClientList = () => {
                           type="email"
                           name="email"
                           value={data.email}
-                          // style={{ display: "none" }}
+                          style={{ display: "none" }}
                         />
                         <input
                           type="name"
                           name="name"
                           value={data.name}
-                          // style={{ display: "none" }}
+                          style={{ display: "none" }}
                         />
                         <input
                           type="price"
                           name="price"
                           value={data.price}
-                          // style={{ display: "none" }}
+                          style={{ display: "none" }}
                         />
                         {console.log(data.email)}
                         <input type="submit" value="Notify the client " />

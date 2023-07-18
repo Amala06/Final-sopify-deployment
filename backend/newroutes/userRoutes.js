@@ -48,7 +48,7 @@ const {
   sendProjecttoClient,
 
   downloadProject,
-
+PasswordUpdate,
   DeleteUser,
   processSubArrays,
 } = require("../controllers/userController");
@@ -95,6 +95,8 @@ router.get("/checkerList", CheckerList);
 router.route("/allclient/:email").get(AllClients);
 router.route("/singleIntern/:email").get(particularIntern);
 router.put("/status/update/:email", UpdateStatus);
+router.put("/explore/newClient/:email", UpdateStatus);
+router.put("/changepassword/:email", PasswordUpdate);
 router.get("/totalintern", TotalIntern);
 router.get("/totalClientsnumber", TotalClient);
 router.put("/updateAmountPaid/:email", updateAmountPaid);

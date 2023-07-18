@@ -16,7 +16,7 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <LinkContainer to="/">
+            <LinkContainer to="/Checkertable">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
             {/* <LinkContainer to="/chat">

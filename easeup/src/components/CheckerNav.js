@@ -48,7 +48,7 @@ const CheckerNav = () => {
             <NavLink className="Navlink" to="/Checkertable">
               <li className="navbar-li">Intern Task List</li>
             </NavLink>
-            <NavLink className="Navlink" to="/chat">
+            <NavLink className="Navlink" to="/checkerChat">
               <li className="navbar-li">My Chats</li>
             </NavLink>
             <NavLink className="Navlink" onClick={Logout}>

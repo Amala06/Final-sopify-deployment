@@ -12,7 +12,11 @@ const PrivateRoute = ({ element: Component, ...rest }) => {
   console.log("Eyyyyy");
   console.log({ isAuthenticated });
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
+  return isAuthenticated ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/particularClient" replace />
+  );
 };
 
 export default PrivateRoute;

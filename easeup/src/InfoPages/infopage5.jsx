@@ -3,13 +3,14 @@ import "./infopage5.css";
 import img1 from "../Images/ig5.png";
 import Navigation from "../components/Navigation";
 import { Link } from "react-router-dom";
+import CheckerNav from "../components/CheckerNav";
 // import { userInfo } from "os";
 const infopage5 = () => {
   const userInfoString = localStorage.getItem("userInfo");
   const userInfo = JSON.parse(userInfoString);
   return (
     <>
-      <Navigation />
+      <CheckerNav />
       <div className="if5_mainContainer">
         <div className="if5_subContainer">
           <div className="if5_gridContainer">

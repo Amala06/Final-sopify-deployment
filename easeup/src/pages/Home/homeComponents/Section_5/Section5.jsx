@@ -19,7 +19,7 @@ const Section5 = () => {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 5000);
+    }, 3000);
     return () => {
       clearInterval(slider);
     };
@@ -30,7 +30,7 @@ const Section5 = () => {
         <div className="s5-headingDiv">
           <div className="s5-headingDiv1">
             <div className="s5-headText1">TESTIMONIALS</div>
-            <div className="s5-headText2">Our Students Reviews</div>
+            <div className="s5-headText2">See what our clients have to say</div>
           </div>
           <div className="s5-headingDiv2">
             <div className="s5-headText3">

@@ -51,6 +51,7 @@ const ParticularClient = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [explore,setExplore]=useState(false);
 
   const handleClosedd = () => setshownotify(false);
   const handleShowedd = () => setshownotify(true);
@@ -140,7 +141,7 @@ const ParticularClient = () => {
         isClosable: true,
         position: "bottom",
       });
-
+console.log(localStorage.getItem("userInfo"));
       // localStorage.setItem("userInfo", JSON.stringify(data));
 
       console.log(data);
@@ -215,7 +216,7 @@ const ParticularClient = () => {
         isClosable: true,
         position: "bottom",
       });
-
+setExplore(true);
       // localStorage.setItem("userInfo", JSON.stringify(data));
 
       //  console.log(data);
@@ -474,7 +475,7 @@ const ParticularClient = () => {
           </Button>
           <br />
           <br />
-          {internItem.approval == "chosen" ? (
+          {internItem.approval == "chosen"  ? (
             <>
               <Button
                 style={{ marginTop: "5px" }}
@@ -483,13 +484,13 @@ const ParticularClient = () => {
               >
                 Notify the User
               </Button>
-              <Button
+              {/* <Button
                 style={{ marginTop: "5px" }}
                 variant="success"
                 // onClick={handleShowedd}
               >
                 <Link to="/clientdetails">AllClients</Link>
-              </Button>
+              </Button> */}
             </>
           ) : (
             <>
@@ -502,6 +503,29 @@ const ParticularClient = () => {
               >
                 Notify the User
               </Button>
+              {/* <Button
+                style={{ marginTop: "5px" }}
+                variant="success"
+                disabled
+                // onClick={handleShowedd}
+              >
+                <Link to="/clientdetails">AllClients</Link>
+              </Button> */}
+            </>
+          )}
+
+          {internItem.approval == "chosen" && explore ? (
+            <>
+              <Button
+                style={{ marginTop: "5px" }}
+                variant="success"
+                // onClick={handleShowedd}
+              >
+                <Link to="/clientdetails">AllClients</Link>
+              </Button>
+            </>
+          ) : (
+            <>
               <Button
                 style={{ marginTop: "5px" }}
                 variant="success"

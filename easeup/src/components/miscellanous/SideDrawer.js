@@ -154,13 +154,13 @@ const SideDrawer = () => {
               <MenuDivider />
               <MenuItem onClick={LogoutHandler}>Logout</MenuItem>
               <MenuItem onClick={LogoutHandler}> </MenuItem>
-              <MenuItem>
+              {/* <MenuItem>
                 <LinkContainer target="_blank" to="/videocall">
                   <Nav.Link target="_blank">
                     VideoCall/Audio Call (Press ctrl + button){" "}
                   </Nav.Link>
                 </LinkContainer>
-              </MenuItem>
+              </MenuItem> */}
             </MenuList>
           </Menu>
         </div>

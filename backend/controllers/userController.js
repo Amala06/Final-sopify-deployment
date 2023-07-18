@@ -2,6 +2,8 @@ const User = require("../finalModel/userModel");
 const generateToken = require("../config/generateToken");
 const asyncHandler = require("express-async-handler");
 var cron = require("node-cron");
+const bcrypt = require("bcryptjs");
+
 // const moment = require("moment-timezone");
 
 const allUsers = asyncHandler(async (req, res) => {
@@ -84,6 +86,32 @@ const MarkasCompleted = asyncHandler(async (req, res) => {
     );
     res.status(200).send(result);
   } catch (error) {}
+});
+
+const PasswordUpdate = asyncHandler(async (req, res) => {
+  try {
+    const email = req.params.email;
+    const newPassword = req.body.password;
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    const result = await User.findOneAndUpdate(
+      { email },
+      {
+        $set: {
+          password: hashedPassword,
+        },
+      },
+      {
+        new: true,
+      }
+    );
+
+    res.status(200).send(result);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 const AllClients = asyncHandler(async (req, res) => {
@@ -261,6 +289,8 @@ const authUser = asyncHandler(async (req, res) => {
       phone: user.phone,
       isIntern: user.isIntern,
       status: user.status,
+      approval: user.approval,
+
       token: generateToken(user._id),
     });
   } else {
@@ -351,7 +381,7 @@ const registerListener = asyncHandler(async (req, res) => {
     password,
     college,
     course,
-    
+
     work,
     city,
     tenth,
@@ -450,7 +480,7 @@ const registerListener = asyncHandler(async (req, res) => {
     phone,
     course,
     college,
-    
+
     tenth,
     city,
     twelth,
@@ -482,7 +512,7 @@ const registerListener = asyncHandler(async (req, res) => {
       phone: listener.phone,
       course: listener.course,
       college: listener.college,
-    
+
       tenth: listener.tenth,
       city: listener.city,
       twelth: listener.twelth,
@@ -957,6 +987,31 @@ const UpdateStatus = asyncHandler(async (req, res) => {
   }
 });
 
+const Internexplore = asyncHandler(async (req, res) => {
+  try {
+    const email = req.params.email;
+    const result = await User.findOneAndUpdate(
+      { email },
+      {
+        $set: {
+          // status: status,
+          // internName: internName,
+          // internEmail: internEmail,
+          // clientSideDisplay: "chosen",
+          // taskMonth: monthNames[date.getMonth()],
+          explore: true,
+        },
+      },
+
+      { new: true }
+    );
+    res.send(result);
+  } catch (error) {
+    console.log(error.message);
+    res.send(error.message);
+  }
+});
+
 const downloadResume = asyncHandler(async (req, res) => {
   try {
     const email = req.params.email;
@@ -1312,4 +1367,6 @@ module.exports = {
   sendProjecttoClient,
   downloadProject,
   DeleteUser,
+  Internexplore,
+  PasswordUpdate,
 };

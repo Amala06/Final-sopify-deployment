@@ -316,11 +316,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               ) : (
                 <>
                   {selectedChat.chatName.toUpperCase()}
+
+{/* changed the view eye button from the chat  */}
+
                   <UpdateGroupChatModal
                     fetchMessages={fetchMessages}
                     fetchAgain={fetchAgain}
                     setFetchAgain={setFetchAgain}
                   />
+
                 </>
               ))}
           </Text>

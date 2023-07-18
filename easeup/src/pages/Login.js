@@ -8,7 +8,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
 import img1 from "../Images/internlogin2.jpg";
-
+// import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
 import "../styles/login.css";
 
 const Login = () => {
@@ -22,6 +23,53 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
   const toast = useToast();
   const history = useNavigate();
+  const userInfoString = localStorage.getItem("userInfo");
+  const userInfo = JSON.parse(userInfoString);
+const [inputValue, setInputValue] =React.useState("");
+const [showModal, setShowModal] = React.useState(false);
+
+
+const handleClose = () => {setShowModal(false)};
+
+const handleInputChange = (e) => {
+  setInputValue(e.target.value);
+};
+
+const handleButtonClick = async() => {
+  // You can perform any action with the inputValue here.
+ try {
+
+    await axios.put(`/api/user/changepassword/${userInfo.email}`, {
+      password: inputValue, // Replace 'newPassword' with the new password value
+    });
+
+    
+    console.log("Password changed successfully!");
+    toast({
+      title: "Password Updation Successful",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom",
+    });
+    
+    
+  } catch (error) {
+      toast({
+        title: "Password is not updated",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+    console.error("Error changing password:", error);
+  }
+  console.log("Input Value:", inputValue);
+
+  // Close the modal after performing the action
+  handleClose();
+};
+  
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -76,6 +124,9 @@ const Login = () => {
       setLoading(false);
     }
   };
+   const handleModalOpen = () => {
+     setShowModal(true);
+   };
 
   return (
     <>
@@ -130,6 +181,36 @@ const Login = () => {
                 {/* {email? " Logging You in...":" Login "} */}
                 Login
               </Button>
+
+              <Modal show={showModal} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Input Modal</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Form>
+                    <Form.Group controlId="inputValue">
+                      <Form.Label>Enter Input:</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter input here"
+                        value={inputValue}
+                        onChange={handleInputChange}
+                      />
+                    </Form.Group>
+                  </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                  <Button variant="primary" onClick={handleButtonClick}>
+                    Save Changes
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              <Link onClick={handleModalOpen}>
+                <u>Forgot/Update Passsword</u>
+              </Link>
               {/* <div className="py-4">
                 <p className="text-center">
                   Don't have an account ?{" "}

@@ -19,8 +19,9 @@ const Section3 = () => {
           </div>
           <div className="s3-headingDiv2">
             <div className="s3-headText3">
-              We help students create a better future by helping them to get
-              into their desired college and/or Universities.
+              We empower students to fulfill their potential by enabling them to
+              gain admission to educational institutions that align with their
+              aspirations.
             </div>
           </div>
         </div>
@@ -61,21 +62,20 @@ const Section3 = () => {
             </div>
           </NavLink>
           <NavLink className="Navlink" to="/assignment">
-
-          <div className="s3-card1">
-            <div className="s3-pecilDiv">
-              <div className="s3-cardImg">
-                <img className="s3-mainImage" src={img3} alt="" srcset="" />
+            <div className="s3-card1">
+              <div className="s3-pecilDiv">
+                <div className="s3-cardImg">
+                  <img className="s3-mainImage" src={img3} alt="" srcset="" />
+                </div>
+                <div className="s3-pencil">
+                  <img className="s3-pencilSvg" src={pencil} alt="" srcset="" />
+                </div>
               </div>
-              <div className="s3-pencil">
-                <img className="s3-pencilSvg" src={pencil} alt="" srcset="" />
+              <div className="s3-cardText1">Assignments</div>
+              <div className="s3-cardText2">
+                Providing well-researched and structured University assignments.
               </div>
             </div>
-            <div className="s3-cardText1">Assignments</div>
-            <div className="s3-cardText2">
-              Providing well-researched and structured University assignments.
-            </div>
-          </div>
           </NavLink>
         </div>
       </div>
